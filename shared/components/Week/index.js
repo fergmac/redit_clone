@@ -1,15 +1,17 @@
 import React, { PropTypes } from 'react';
 import Divider from 'material-ui/Divider';
 import styles from './style.css';
+import { List, ListItem } from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
 
 const Week = ({ data }) => (
 
   <div className={styles.week}>
-    <h1>{data.title}</h1>
+    <Subheader>{data.title}</Subheader>
     <Divider />
-    <ul>
-    {data.categories.map((category, index) => (<li key={index}>{category}</li>))}
-    </ul>
+    <List>
+    {data.categories.map((category, index) => (<ListItem key={index}>{category}</ListItem>))}
+    </List>
   </div>
 );
 

@@ -7,6 +7,7 @@ import Week from '../Week';
 import SiteIcon from 'material-ui/svg-icons/communication/import-contacts';
 import data from '../../data.js';
 
+
 const Categories = () => (
   <Drawer>
     <AppBar
