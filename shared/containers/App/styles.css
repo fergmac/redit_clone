@@ -1,0 +1,11 @@
+.viewContainer {
+	font-family: Roboto, sans-serif;
+	min-height: 100vh;
+  box-sizing: border-box;
+	display:flex;
+	flex-direction: column;
+}
+
+.viewContainer > div {
+	flex: 1;
+}

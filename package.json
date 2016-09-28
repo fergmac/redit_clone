@@ -1,0 +1,99 @@
+{
+  "name": "adp-react",
+  "version": "1.0.0",
+  "description": "React project for RED Academy ADP",
+  "license": "MIT",
+  "author": "MK <mackenzie@redacademy.com> (http://mackenziekieran.com)",
+  "contributors": [
+    "Shawn McKay <shawn.j.mckay@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": " https://github.com/redacademy/adp-react.git"
+  },
+  "scripts": {
+    "start": "webpack-validator .webpack/webpack.dev.client.config.js && concurrently 'npm run watch' 'cross-env NODE_ENV=development node --harmony server' 'npm run browsersync'",
+    "browsersync": "browser-sync start --config .webpack/browsersync.js",
+    "watch": "webpack --watch --config '.webpack/webpack.dev.client.config.js'"
+  },
+  "babel": {
+    "env": {
+      "production": {
+        "only": [
+          "web.browser",
+          "shared"
+        ],
+        "plugins": [
+          "transform-react-remove-prop-types",
+          "transform-react-constant-elements",
+          "transform-react-inline-elements"
+        ]
+      }
+    },
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "material-ui": "^0.15.2",
+    "react": "^15.3.0",
+    "react-dom": "15.2.1",
+    "react-tap-event-plugin": "1.0.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "rules": {
+      "max-len": 0,
+      "global-require": 0,
+      "no-case-declarations": 0,
+      "no-param-reassign": 1
+    }
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "babel-core": "6.10.4",
+    "babel-eslint": "6.1.1",
+    "babel-loader": "6.2.4",
+    "babel-plugin-transform-react-constant-elements": "6.9.1",
+    "babel-plugin-transform-react-inline-elements": "6.8.0",
+    "babel-plugin-transform-react-remove-prop-types": "0.2.7",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-es2015-native-modules": "^6.6.0",
+    "babel-preset-es2015-webpack": "6.4.1",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-react-hmre": "1.1.1",
+    "babel-preset-stage-0": "6.5.0",
+    "babel-register": "^6.9.0",
+    "browser-sync": "^2.13.0",
+    "cross-env": "2.0.0",
+    "css-loader": "^0.23.1",
+    "eslint": "3.0.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-loader": "1.4.1",
+    "eslint-plugin-import": "1.10.2",
+    "eslint-plugin-jsx-a11y": "2.0.0",
+    "eslint-plugin-react": "5.2.2",
+    "eventsource-polyfill": "0.9.6",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "0.4.3",
+    "html-webpack-plugin": "2.22.0",
+    "json-loader": "^0.5.4",
+    "postcss-cssnext": "^2.7.0",
+    "postcss-loader": "^0.9.1",
+    "postcss-reporter": "^1.4.1",
+    "run-sequence": "^1.2.2",
+    "style-loader": "^0.13.1",
+    "webpack": "2.1.0-beta.13",
+    "webpack-dev-middleware": "1.6.1",
+    "webpack-hot-middleware": "2.12.1",
+    "webpack-validator": "^2.2.4"
+  }
+}
