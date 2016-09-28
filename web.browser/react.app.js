@@ -9,7 +9,7 @@ import App from '../shared/containers/App';
 import Welcome from '../shared/components/Welcome';
 // import LoginForm from '../shared/components/LoginForm';
 // import CreatePost from '../shared/components/CreatePost';
-// import Categories from '../shared/components/Categories';
+import Categories from '../shared/components/Categories';
 // import Week from '../shared/components/Week';
 // import PostList from '../shared/components/PostList';
 // import Post from '../shared/components/Post';
@@ -22,6 +22,7 @@ ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
     <Layout>
       <App>
+        <Categories />
         <Welcome />
       </App>
     </Layout>
