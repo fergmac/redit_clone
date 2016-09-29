@@ -1,21 +1,23 @@
 import React, {Component, PropType} from 'react';
 import styles from '../../../web.browser/styles/shared.css';
+import data from '../../data.js';
+import Post from '../Post.js';
+import AppBar from 'material-ui/AppBar';
 
-const PostList = ({postList}) => (
+// const PostList = ({post}) => (
   
-  <li> {postList={item} key={index}}</li>
+//   <li> {post={item} key={index}}</li>
   
-);
+// );
 
 class App extends Component {
   render() {
-    const postList = [{post}];
 
     return (
-      <div className={styles.postList}>
-        <h1>Post List</h1>
+      <div className={styles.post}>
+        <h1>{post.title}</h1>
           <ul>
-            {postList.map((item, index) => (<PostList postList={item} key={index}/>))}
+            {data.posts.map((post, index) => (<PostList post={post} key={index}/>))}
           </ul>
       </div>
     );

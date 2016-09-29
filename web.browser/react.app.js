@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import {
+   Router,
+   Route,
+   IndexRoute,
+   hashHistory,
+} from 'react-router';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import muiTheme from './styles/theme';
 
 import Layout from '../shared/components/Layout';
 import App from '../shared/containers/App';
 import Welcome from '../shared/components/Welcome';
-// import LoginForm from '../shared/components/LoginForm';
-// import CreatePost from '../shared/components/CreatePost';
-import Categories from '../shared/components/Categories';
+import LoginForm from '../shared/components/LoginForm';
+import CreatePost from '../shared/components/CreatePost';
+// import Categories from '../shared/components/Categories';
 // import Week from '../shared/components/Week';
 // import PostList from '../shared/components/PostList';
 // import Post from '../shared/components/Post';
@@ -20,12 +27,18 @@ injectTapEventPlugin();
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
-    <Layout>
-      <App>
-        <Categories />
-        <Welcome />
-      </App>
-    </Layout>
+    <Router history={hashHistory}>
+      <Route path="/" component={Layout}>
+        <Route component={App}>
+          <IndexRoute component={Welcome} />
+          <Route part="login" component={LoginForm} />
+          <Route path="posts" >
+            <Route path="new" component={CreatePost} />
+            <Route path=":lessonId" component={CreatePost} />
+          </Route>
+        </Route>
+      </Route>
+    </Router>
   </MuiThemeProvider>,
   document.getElementById('react-app')
 );
