@@ -5,7 +5,7 @@ import {
    Router,
    Route,
    IndexRoute,
-   hashHistory,
+   browserHistory,
 } from 'react-router';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -18,7 +18,7 @@ import LoginForm from '../shared/components/LoginForm';
 import CreatePost from '../shared/components/CreatePost';
 // import Categories from '../shared/components/Categories';
 // import Week from '../shared/components/Week';
-// import PostList from '../shared/components/PostList';
+import PostList from '../shared/components/PostList';
 // import Post from '../shared/components/Post';
 // Needed for onTouchTap (Material UI)
 // http://stackoverflow.com/a/34015469/988941
@@ -27,14 +27,14 @@ injectTapEventPlugin();
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
       <Route path="/" component={Layout}>
         <Route component={App}>
           <IndexRoute component={Welcome} />
-          <Route part="login" component={LoginForm} />
+          <Route path="login" component={LoginForm} />
           <Route path="posts" >
             <Route path="new" component={CreatePost} />
-            <Route path=":lessonId" component={CreatePost} />
+            <Route path=":lessonId" component={PostList} />
           </Route>
         </Route>
       </Route>

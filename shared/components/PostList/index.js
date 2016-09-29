@@ -4,20 +4,16 @@ import data from '../../data.js';
 import Post from '../Post.js';
 import AppBar from 'material-ui/AppBar';
 
-// const PostList = ({post}) => (
-  
-//   <li> {post={item} key={index}}</li>
-  
-// );
-
-class App extends Component {
+class PostList extends Component {
   render() {
 
+    const  { data } = this.props;
+    
     return (
       <div className={styles.post}>
         <h1>{post.title}</h1>
           <ul>
-            {data.posts.map((post, index) => (<PostList post={post} key={index}/>))}
+            {data.posts.map((post, index) => (<Post post={post} key={index}/>))}
           </ul>
       </div>
     );
