@@ -3,20 +3,21 @@ import Divider from 'material-ui/Divider';
 import styles from './style.css';
 import { List, ListItem } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
+import { Link } from 'react-router';
 
-const Week = ({ data }) => (
+const Week = ({ week }) => (
 
   <div className={styles.week}>
-    <Subheader>{data.title}</Subheader>
+    <Subheader>{week.title} {week.id}</Subheader>
     <Divider />
     <List>
-    {data.categories.map((category, index) => (<ListItem key={index}>{category}</ListItem>))}
+    {week.categories.map((category, index) => (<ListItem key={index}><Link to={`/posts/${week.id}`}>{category}</Link></ListItem>))}
     </List>
   </div>
 );
 
 Week.propTypes = {
-  data: PropTypes.object.isRequired,
+  week: PropTypes.object.isRequired,
 };
 
 export default Week;
