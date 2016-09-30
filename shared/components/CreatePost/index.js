@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../../web.browser/styles/shared.css';
+import styles from './style.css';
 
 const CreatePost = () => (
   <div className={styles.createPostPage}>

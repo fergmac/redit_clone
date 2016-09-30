@@ -2,6 +2,7 @@ import React from 'react';
 import Categories from '../../components/Categories';
 import styles from './styles.css';
 
+
 const App = (props) => (
   <div>
     <Categories />

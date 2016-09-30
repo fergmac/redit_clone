@@ -55,13 +55,14 @@
       "max-len": 0,
       "global-require": 0,
       "no-case-declarations": 0,
-      "no-param-reassign": 1
+      "no-param-reassign": 1,
+      "prefer-stateless-function": 0
     }
   },
   "devDependencies": {
     "autoprefixer": "^6.3.7",
     "babel-core": "6.10.4",
-    "babel-eslint": "6.1.1",
+    "babel-eslint": "^6.1.1",
     "babel-loader": "6.2.4",
     "babel-plugin-transform-react-constant-elements": "6.9.1",
     "babel-plugin-transform-react-inline-elements": "6.8.0",

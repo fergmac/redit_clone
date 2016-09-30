@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
-import styles from '../../../web.browser/styles/shared.css';
+import styles from './style.css';
 import Chip from 'material-ui/Chip';
 import Paper from 'material-ui/Paper';
 
 const Post = ({ post }) => (
   <Paper>
-    <div className={styles.post}>
+    <div className={styles.postPage}>
       <h1>{post.title}</h1>
       <p>{post.description}</p>
       <p>{post.vote}</p>

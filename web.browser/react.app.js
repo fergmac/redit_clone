@@ -10,7 +10,6 @@ import {
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import muiTheme from './styles/theme';
-
 import Layout from '../shared/components/Layout';
 import App from '../shared/containers/App';
 import Welcome from '../shared/components/Welcome';
