@@ -4,14 +4,17 @@ import Chip from 'material-ui/Chip';
 import Paper from 'material-ui/Paper';
 
 const Post = ({ post }) => (
-  <Paper>
-    <div className={styles.postPage}>
+  <Paper className={styles.postContainer}>
+    <div>
       <h1>{post.title}</h1>
       <p>{post.description}</p>
       <p>{post.vote}</p>
-      {post.categories.map((category, index) => (<Chip key={index}>{category}</Chip>))}
+    </div>
+    <div>
+    {post.categories.map((category, index) => (<Chip key={index}>{category}</Chip>))}
     </div>
   </Paper>
+
 );
 
 Post.propTypes = {
