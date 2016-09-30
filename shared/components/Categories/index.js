@@ -19,7 +19,7 @@ const Categories = () => (
         </IconButton>
      }
     />
-    {data.weeks.map((week, index) => <Week week={week} key={index} />)}
+    {data.weeks.map((week, index) => (<Week week={week} key={index} />))}
   </Drawer>
 );
 

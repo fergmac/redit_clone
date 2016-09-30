@@ -8,10 +8,15 @@ import { Link } from 'react-router';
 const Week = ({ week }) => (
 
   <div className={styles.week}>
-    <Subheader>{week.title} {week.id}</Subheader>
+    <Subheader>{week.title}</Subheader>
     <Divider />
     <List>
-    {week.categories.map((category, index) => (<ListItem key={index}><Link to={`/posts/${week.id}`}>{category}</Link></ListItem>))}
+      {week.categories.map((category, index) => (
+        <ListItem key={index}>
+          <Link to={`/posts/${week.id}`} >
+            {category}
+          </Link>
+        </ListItem>))}
     </List>
   </div>
 );
