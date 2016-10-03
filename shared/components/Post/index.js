@@ -6,9 +6,9 @@ import Paper from 'material-ui/Paper';
 const Post = ({ post }) => (
   <Paper className={styles.postContainer}>
     <div>
-      <h1>{post.title}</h1>
+      <a href=""><h3>{post.title}</h3></a>
       <p>{post.description}</p>
-      <p>{post.vote}</p>
+      <p>{post.votes}</p>
     </div>
     <div>
     {post.categories.map((category, index) => (<Chip key={index}>{category}</Chip>))}
