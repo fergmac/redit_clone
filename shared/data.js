@@ -3,23 +3,23 @@ export default {
     id: '0',
     title: 'Week 1',
     categories: [
-      'React',
-      'React-Router',
+      { name: 'React', id: 1 },
+      { name: 'React-Router', id: 2 },
     ],
   }, {
     id: '1',
     title: 'Week 2',
     categories: [
-      'Redux',
-      'Functional Programming',
+      { name: 'Redux', id: 3 },
+      { name: 'Functional Programming', id: 4 },
     ],
   }, {
     id: '2',
     title: 'Week 3',
     categories: [
-      'Node',
-      'Express',
-      'Async',
+      { name: 'Node', id: 5 },
+      { name: 'Express', id: 6 },
+      { name: 'Async', id: 7 },
     ],
   }],
   posts: [{

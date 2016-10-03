@@ -13,8 +13,8 @@ const Week = ({ week }) => (
     <List>
       {week.categories.map((category, index) => (
         <ListItem key={index}>
-          <Link to={`/posts/${week.id}`} className={styles.links}>
-            {category}
+          <Link to={`/posts/${category.id}`} className={styles.links}>
+            {category.name}
           </Link>
         </ListItem>))}
     </List>
