@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import store from '../shared/redux/store.js';
-import { voteUp } from '../shared/redux/modules/posts.js';
+import { voteUpSort } from '../shared/redux/modules/posts.js';
 
 import {
    Router,
@@ -26,7 +26,7 @@ import PostList from '../shared/components/PostList';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-store.dispatch(voteUp('1'));
+store.dispatch(voteUpSort(1));
 
 ReactDOM.render(
   <MuiThemeProvider muiTheme={muiTheme}>
