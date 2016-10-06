@@ -7,11 +7,11 @@ import { connect } from 'react-redux';
 
 class PostList extends PureComponent {
   render() {
-    // const correctPost = data.posts.filter((post) => this.props.params.lessonId === post.id);
+    const { posts, params } = this.props;
+    const correctPost = posts.filter((post) => parseInt(params.lessonId, 10) === post.id);
     return (
       <div className={styles.postListContainer}>
-         {/* {correctPost.map((post, index) => (<Post post={post} key={index} />))} */}
-         {this.props.posts.map((post, index) => (<Post post={post} key={index} />))}
+         {correctPost.map((post) => (<Post post={post} key={post.id} />))}
       </div>
     );
   }

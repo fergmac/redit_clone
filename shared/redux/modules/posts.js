@@ -30,25 +30,20 @@ export const voteUpSort = (id) => (dispatch) => {
 };
 
 const defaultPosts = [{
-  id: 0,
+  id: 1,
   author: 'Mackenzie',
   votes: 0,
-  categories: [
-    'React',
-  ],
-  title: 'React!!!!',
+  lessonId: 1,
+  title: 'first React!!!!',
   description: 'Some React resource',
   link: '//github.com/react',
 }, {
-  id: 1,
+  id: 2,
   author: 'Shawn',
   votes: 5,
-  categories: [
-    'React',
-  ],
-  title: 'React ?',
+  lessonId: 2,
+  title: 'second React ?',
   description: 'Some React resource',
-  link: '//github.com/react',
 }];
 
 

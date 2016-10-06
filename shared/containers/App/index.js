@@ -1,11 +1,11 @@
 import React from 'react';
-import Categories from '../../components/Categories';
+import Lessons from '../../components/Lessons';
 import styles from './styles.css';
 
 
 const App = (props) => (
   <div>
-    <Categories />
+    <Lessons />
     <div className={styles.viewContainer}>
       {props.children}
     </div>

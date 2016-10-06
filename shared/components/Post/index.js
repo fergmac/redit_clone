@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import styles from './style.css';
-import Chip from 'material-ui/Chip';
+// import Chip from 'material-ui/Chip';
 import Paper from 'material-ui/Paper';
 
 const Post = ({ post }) => (
@@ -11,7 +11,7 @@ const Post = ({ post }) => (
       <p>{post.votes}</p>
     </div>
     <div>
-    {post.categories.map((category, index) => (<Chip key={index}>{category}</Chip>))}
+   {/* {post.lessons.map((lesson, index) => (<Chip key={index}>{lesson}</Chip>))} */}
     </div>
   </Paper>
 

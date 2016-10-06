@@ -8,12 +8,12 @@ import SiteIcon from 'material-ui/svg-icons/communication/import-contacts';
 // import data from '../../data.js';
 import { connect } from 'react-redux';
 
-class Categories extends PureComponent {
+class Lessons extends PureComponent {
   render() {
     return (
       <Drawer>
         <AppBar
-          className={style.categories}
+          className={style.lessons}
           title={<span>REDit</span>}
           iconElementLeft={
             <IconButton>
@@ -21,7 +21,7 @@ class Categories extends PureComponent {
             </IconButton>
             }
         />
-          {this.props.weeks.map((week, index) => (<Week week={week} key={index} />))}
+          {this.props.weeks.map((week) => (<Week week={week} key={week.id} />))}
       </Drawer>
     );
   }
@@ -31,7 +31,7 @@ const mapStateToProps = state => ({
   weeks: state.weeks,
 });
 
-export default connect(mapStateToProps)(Categories);
+export default connect(mapStateToProps)(Lessons);
 
 // const Categories = () => (
 //   <Drawer>

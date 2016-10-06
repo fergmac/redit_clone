@@ -11,12 +11,12 @@ const Week = ({ week }) => (
     <Subheader>{week.title}</Subheader>
     <Divider />
     <List>
-      {week.categories.map((category, index) => (
-        <ListItem key={index}>
-          <Link to={`/posts/${category.id}`} className={styles.links}>
-            {category.name}
-          </Link>
-        </ListItem>))}
+      {week.lessons.map((lesson) => (
+        <Link to={`/posts/${lesson.id}`} key={lesson.id}>
+          <ListItem className={styles.links}>
+            {lesson.name}
+          </ListItem>
+        </Link>))}
     </List>
   </div>
 );
