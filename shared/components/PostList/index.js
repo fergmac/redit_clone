@@ -6,22 +6,37 @@ import { connect } from 'react-redux';
 import { voteUp, sortByPopularity } from '../../redux/modules/posts.js';
 import { bindActionCreators } from 'redux';
 import FlatButton from 'material-ui/FlatButton';
+import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 
 
 class PostList extends PureComponent {
   render() {
     const truth = true;
     const { posts, params } = this.props;
+    // parseInt turns the params from a string into a number
     const correctPost = posts.filter((post) => parseInt(params.lessonId, 10) === post.id);
     return (
-      <div className={styles.postListContainer}>
-         {correctPost.map((post) => (
-           <Paper key={post.id} className={styles.postContainer} >
-             <Post post={post} />
-             <FlatButton label="Votes" primary={truth} onClick={this.props.voteUp}>
-              {post.votes}
-             </FlatButton>
-           </Paper>))}
+      <div>
+        <Toolbar className={styles.postToolbar}>
+          <ToolbarGroup>
+            <ToolbarTitle text="Posts" />
+          </ToolbarGroup>
+          <ToolbarGroup>
+            <ToolbarTitle text="Sort:" />
+            <FlatButton label="Newest" primary={truth} />
+            <FlatButton label="Popular" primary={truth} />
+          </ToolbarGroup>
+        </Toolbar>
+
+        <div className={styles.postListContainer}>
+            {correctPost.map((post) => (
+              <Paper key={post.id} className={styles.postContainer} >
+                <Post post={post} />
+                <FlatButton label="Votes" primary={truth} onClick={voteUp}>
+                {post.votes}
+                </FlatButton>
+              </Paper>))}
+        </div>
       </div>
     );
   }
