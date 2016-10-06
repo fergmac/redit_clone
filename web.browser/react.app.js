@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from '../shared/redux/store.js';
 import { voteUpSort } from '../shared/redux/modules/posts.js';
+import { Provider } from 'react-redux';
 
 import {
    Router,
@@ -29,19 +30,22 @@ injectTapEventPlugin();
 store.dispatch(voteUpSort(1));
 
 ReactDOM.render(
-  <MuiThemeProvider muiTheme={muiTheme}>
-    <Router history={browserHistory}>
-      <Route path="/" component={Layout}>
-        <Route component={App}>
-          <IndexRoute component={Welcome} />
-          <Route path="login" component={LoginForm} />
-          <Route path="posts" >
-            <Route path="new" component={CreatePost} />
-            <Route path=":lessonId" component={PostList} />
+  // store={store} gives us access to the store everywhere
+  <Provider store={store} >
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <Router history={browserHistory}>
+        <Route path="/" component={Layout}>
+          <Route component={App}>
+            <IndexRoute component={Welcome} />
+            <Route path="login" component={LoginForm} />
+            <Route path="posts" >
+              <Route path="new" component={CreatePost} />
+              <Route path=":lessonId" component={PostList} />
+            </Route>
           </Route>
         </Route>
-      </Route>
-    </Router>
-  </MuiThemeProvider>,
+      </Router>
+    </MuiThemeProvider>
+  </Provider>,
   document.getElementById('react-app')
 );
