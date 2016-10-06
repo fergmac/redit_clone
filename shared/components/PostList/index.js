@@ -3,8 +3,7 @@ import styles from './style.css';
 import Paper from 'material-ui/Paper';
 import Post from '../Post';
 import { connect } from 'react-redux';
-import { voteUp, sortByPopularity } from '../../redux/modules/posts.js';
-import { bindActionCreators } from 'redux';
+import { voteUpSort } from '../../redux/modules/posts.js';
 import FlatButton from 'material-ui/FlatButton';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 
@@ -12,7 +11,8 @@ import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 class PostList extends PureComponent {
   render() {
     const truth = true;
-    const { posts, params } = this.props;
+    // variable so i don't have to write this.props in front
+    const { posts, params, voteUp } = this.props;
     // parseInt turns the params from a string into a number
     const correctPost = posts.filter((post) => parseInt(params.lessonId, 10) === post.id);
     return (
@@ -46,15 +46,9 @@ const mapStateToProps = state => ({
   posts: state.posts,
 });
 
-// const mapDispatchToProps = dispatch => ({
-//    dispatch(voteUp)
-// });
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(Object.assign({}, voteUp, sortByPopularity), dispatch),
-  };
-}
+const mapDispatchToProps = {
+  voteUp: voteUpSort,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);
 
