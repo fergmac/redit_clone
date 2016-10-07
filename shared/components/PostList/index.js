@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { voteUp, sortByPopularity, loadPosts } from '../../redux/modules/posts.js';
 import FlatButton from 'material-ui/FlatButton';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
+// import { Link } from 'react-router';
 
 
 class PostList extends PureComponent {
@@ -17,7 +18,7 @@ class PostList extends PureComponent {
   }
   render() {
     // variable so i don't have to write this.props in front
-    const { posts, params, voteUps } = this.props;
+    const { posts, params, voteUps, sortByPop } = this.props;
     // parseInt turns the params from a string into a number
     const correctPost = posts.filter((post) => parseInt(params.lessonId, 10) === post.id);
     return (
@@ -29,7 +30,8 @@ class PostList extends PureComponent {
           <ToolbarGroup>
             <ToolbarTitle text="Sort:" />
             <FlatButton label="Newest" primary />
-            {/* <Link to={`/posts/${lesson.id}`} key={lesson.id}><FlatButton label="Popular" primary /></Link> */}
+           {/* <Link to={`/posts/${lesson.id}`} key={lesson.id}><FlatButton label="Popular" primary /></Link> */}
+            <FlatButton label="Popular" primary onClick={sortByPop.bind(this)} />
           </ToolbarGroup>
         </Toolbar>
         <div className={styles.postListContainer}>
@@ -51,7 +53,7 @@ const mapDispatchToProps = (dispatch) => ({
   voteUps: (id) => {
     dispatch(voteUp(id));
   },
-  sortByPopularity: () => {
+  sortByPop: () => {
     dispatch(sortByPopularity());
   },
 });
