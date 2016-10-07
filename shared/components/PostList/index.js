@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import styles from './style.css';
-import Paper from 'material-ui/Paper';
 import Post from '../Post';
 import { connect } from 'react-redux';
 import { voteUpSort } from '../../redux/modules/posts.js';
@@ -27,15 +26,8 @@ class PostList extends PureComponent {
             <FlatButton label="Popular" primary={truth} />
           </ToolbarGroup>
         </Toolbar>
-
         <div className={styles.postListContainer}>
-            {correctPost.map((post) => (
-              <Paper key={post.id} className={styles.postContainer} >
-                <Post post={post} />
-                <FlatButton label="Votes" primary={truth} onClick={voteUp}>
-                {post.votes}
-                </FlatButton>
-              </Paper>))}
+            {correctPost.map((post) => (<Post post={post} voteUp={voteUp} key={post.id} />))}
         </div>
       </div>
     );
