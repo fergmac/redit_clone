@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import store from '../shared/redux/store.js';
-import { voteUpSort } from '../shared/redux/modules/posts.js';
+import { voteUp, sortByPopularity } from '../shared/redux/modules/posts.js';
 import { Provider } from 'react-redux';
 
 import {
@@ -27,7 +27,8 @@ import PostList from '../shared/components/PostList';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-store.dispatch(voteUpSort(1));
+store.dispatch(voteUp(1));
+store.dispatch(sortByPopularity());
 
 ReactDOM.render(
   // store={store} gives us access to the store everywhere

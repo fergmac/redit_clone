@@ -1,7 +1,7 @@
 // action types
 const VOTE_UP = 'VOTE_UP';
 const SORT_BY_POPULARITY = 'SORT_BY_POPULARITY';
-
+const LOAD_POSTS = 'LOAD_POSTS';
 
 // sort votes function
 const sortByVotes = (key) => (a, b) => {
@@ -15,6 +15,11 @@ const sortByVotes = (key) => (a, b) => {
   }
 };
 // action creators
+export const loadPosts = (lessonId) => ({
+  type: LOAD_POSTS,
+  payload: { lessonId },
+});
+
 export const voteUp = (id) => ({
   type: VOTE_UP,
   payload: { id },
@@ -23,11 +28,6 @@ export const voteUp = (id) => ({
 export const sortByPopularity = () => ({
   type: SORT_BY_POPULARITY,
 });
-
-export const voteUpSort = (id) => (dispatch) => {
-  dispatch(voteUp(id));
-  dispatch(sortByPopularity());
-};
 
 const defaultPosts = [{
   id: 1,
@@ -50,6 +50,8 @@ const defaultPosts = [{
 // all changes to Post and Week data here
 const reducer = (posts = defaultPosts, action) => {
   switch (action.type) {
+    case LOAD_POSTS:
+      return posts.filter((post) => parseInt(action.payload.lessonId, 10) === post.id);
     case VOTE_UP:
       return posts.map((post) => {
         if (action.payload.id === post.id) {
