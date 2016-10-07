@@ -8,6 +8,10 @@ import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 
 
 class PostList extends PureComponent {
+
+  ComponentWillMount() {
+    this.props.sortByPopularity();
+  }
   render() {
     const truth = true;
     // variable so i don't have to write this.props in front
