@@ -18,12 +18,12 @@ To receive a “Pass” grade for this project, your submission will need to sat
 Your project must:
 
 - [X] Be pushed to Github 
-- [ ] Use [descriptive Git commits](http://chris.beams.io/posts/git-commit/)
-- [ ] Use small, single purpose Git commits
+- [X] Use [descriptive Git commits](http://chris.beams.io/posts/git-commit/)
+- [X] Use small, single purpose Git commits
 - [ ] Contain `README.md` with project summary and setup
-- [ ] Contain a valid [`package.json`](http://browsenpm.org/package.json) file with all appropriate fields completed
-- [ ] Contain `.gitignore` file (ignoring `node_modules` and system files)
-- [ ] Contain this self-evaluated spec checklist renamed `specs.md`
+- [X] Contain a valid [`package.json`](http://browsenpm.org/package.json) file with all appropriate fields completed
+- [X] Contain `.gitignore` file (ignoring `node_modules` and system files)
+- [X] Contain this self-evaluated spec checklist renamed `specs.md`
 - [X] Use ESLint with the [AirBnB style-guide](https://github.com/airbnb/javascript)
 - [X] Run without errors with `npm start`
 - [X] Have appropriate files compiled into a `build` directory
@@ -33,47 +33,47 @@ Your project must:
 Your project must:
 
 - [X] Load mock data as "posts" and "weeks"
-- [ ] Display posts in a list
+- [X] Display posts in a list
 - [ ] Allow post sorting (by "newest" or "popularity")
 - [ ] Allow post filtering (by post list)
-- [ ] Allow users to up-vote posts
+- [X] Allow users to up-vote posts
 - [ ] Use routing to change the URL when the user sorts or filters
 
 ### Development
 
 Your project must:
 
-- [ ] Contain components built using valid JSX
-- [ ] Use ES2015 `import` and `export`
-- [ ] Contain components created using `React.Component`, `const`, or `function` only
-- [ ] Chain transformations with array methods (`.map`, `.filter`, etc.)
-- [ ] Use CSS modules for inline styles
-- [ ] Use React Lifecycle method where appropriate
-- [ ] Implement React Router to:
+- [X] Contain components built using valid JSX
+- [X] Use ES2015 `import` and `export`
+- [X] Contain components created using `React.Component`, `const`, or `function` only
+- [X] Chain transformations with array methods (`.map`, `.filter`, etc.)
+- [X] Use CSS modules for inline styles
+- [X] Use React Lifecycle method where appropriate
+- [X] Implement React Router to:
   - Use nested routes with a `Layout` component
   - Implement a top-level `IndexRoute`
   - Use three or more other routes
   - Pass route params for filtering and sorting
   - Wrap the `browserHistory` object
-- [ ] Implement Redux to manage application state
-- [ ] Hook up [`react-router-redux`](https://github.com/reactjs/react-router-redux) sync routing with Redux DevTools
-- [ ] Implement "presentational" and "container" components appropriately throughout the application
-- [ ] Use [`react-redux`](https://github.com/reactjs/react-redux) `connect` to map state to props
-- [ ] Use `connect` to map dispatch to props
-- [ ] Add [`redux-logger`](https://github.com/evgenyrodionov/redux-logger) middleware during "development" mode
-- [ ] Add and use [`redux-thunk`](https://github.com/gaearon/redux-thunk) middleware for async dispatches
-- [ ] Reflect the designer's vision for the application's UI
+- [X] Implement Redux to manage application state
+- [X] Hook up [`react-router-redux`](https://github.com/reactjs/react-router-redux) sync routing with Redux DevTools
+- [X] Implement "presentational" and "container" components appropriately throughout the application
+- [X] Use [`react-redux`](https://github.com/reactjs/react-redux) `connect` to map state to props
+- [X] Use `connect` to map dispatch to props
+- [X] Add [`redux-logger`](https://github.com/evgenyrodionov/redux-logger) middleware during "development" mode
+- [X] Add and use [`redux-thunk`](https://github.com/gaearon/redux-thunk) middleware for async dispatches
+- [X] Reflect the designer's vision for the application's UI
 
 ### Quality
 
 Your project must:
 
-- [ ] Contain an organized file tree ([see an example](http://marmelab.com/blog/2015/12/17/react-directory-structure.html))
-- [ ] Use sub-directories to organize component files (on a per component basis)
+- [X] Contain an organized file tree ([see an example](http://marmelab.com/blog/2015/12/17/react-directory-structure.html))
+- [X] Use sub-directories to organize component files (on a per component basis)
 - [ ] Be free of lint errors from ESLint
-- [ ] Use a unique `key` for all items in lists
-- [ ] Use `propType` validations for all components
-- [ ] Be free of `propType` validation errors in console
+- [X] Use a unique `key` for all items in lists
+- [X] Use `propType` validations for all components
+- [X] Be free of `propType` validation errors in console
 
 ### Stretch Goals
 
