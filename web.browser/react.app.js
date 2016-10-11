@@ -18,10 +18,8 @@ import App from '../shared/containers/App';
 import Welcome from '../shared/components/Welcome';
 import LoginForm from '../shared/components/LoginForm';
 import CreatePost from '../shared/components/CreatePost';
-// import Categories from '../shared/components/Categories';
-// import Week from '../shared/components/Week';
-import PostList from '../shared/components/PostList';
-// import Post from '../shared/components/Post';
+import PostList, { getPostList } from '../shared/components/PostList';
+
 // Needed for onTouchTap (Material UI)
 // http://stackoverflow.com/a/34015469/988941
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -32,7 +30,7 @@ store.dispatch(sortByPopularity());
 
 ReactDOM.render(
   // store={store} gives us access to the store everywhere
-  <Provider store={store} >
+  <Provider store={store}>
     <MuiThemeProvider muiTheme={muiTheme}>
       <Router history={browserHistory}>
         <Route path="/" component={Layout}>
@@ -42,6 +40,9 @@ ReactDOM.render(
             <Route path="posts" >
               <Route path="new" component={CreatePost} />
               <Route path=":lessonId" component={PostList} />
+              {/* pass component as a function higher order component */}
+              <Route path="newest" component={getPostList('newest')} />
+              <Route path="popular" component={getPostList('popular')} />
             </Route>
           </Route>
         </Route>

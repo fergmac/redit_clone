@@ -4,8 +4,6 @@ import styles from './style.css';
 import Card from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
-// const { params, voteUp } = this.props;
-
 const Post = ({ post, voteUp }) => (
   <Card className={styles.postContainer}>
     <a href=""><h3>{post.title}</h3></a>

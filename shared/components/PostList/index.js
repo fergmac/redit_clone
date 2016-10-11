@@ -2,25 +2,40 @@ import React, { PureComponent } from 'react';
 import styles from './style.css';
 import Post from '../Post';
 import { connect } from 'react-redux';
-import { voteUp, sortByPopularity, loadPosts } from '../../redux/modules/posts.js';
+import { voteUp, sortByPopularity, sortByNewest, loadPosts } from '../../redux/modules/posts.js';
 import FlatButton from 'material-ui/FlatButton';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
-// import { Link } from 'react-router';
+import { Link } from 'react-router';
 
 
 class PostList extends PureComponent {
-
-  ComponentWillMount() {
-    this.props.loadPosts();
+  constructor(sortType = null) {
+    super();
+    this.sortType = sortType;
   }
-  ComponentDidUpdate() {
-    this.props.sortByPopularity();
+
+  // componentWillMount() {
+  //   // dispatch sort by newest/popular
+  //   switch (this.sortType) {
+  //     case 'popular':
+  //       this.props.loadPosts('popular');
+  //       break;
+  //     case 'newest':
+  //       this.props.loadPosts('newest');
+  //       break;
+  //     default:
+  //       this.props.loadPosts();
+  //   }
+  // }
+  componentDidUpdate() {
+    // this.props.sortByPopularity();
   }
   render() {
     // variable so i don't have to write this.props in front
-    const { posts, params, voteUps, sortByPop } = this.props;
+    const { posts, params, voteUps, sortByNew, sortByPop } = this.props;
     // parseInt turns the params from a string into a number
     const correctPost = posts.filter((post) => parseInt(params.lessonId, 10) === post.id);
+    // console.log(this.props);
     return (
       <div>
         <Toolbar className={styles.postToolbar}>
@@ -29,9 +44,13 @@ class PostList extends PureComponent {
           </ToolbarGroup>
           <ToolbarGroup>
             <ToolbarTitle text="Sort:" />
-            <FlatButton label="Newest" primary />
-           {/* <Link to={`/posts/${lesson.id}`} key={lesson.id}><FlatButton label="Popular" primary /></Link> */}
-            <FlatButton label="Popular" primary onClick={sortByPop.bind(this)} />
+            <Link>
+              <FlatButton label="Newest" primary onClick={sortByNew.bind(this)} />
+            </Link>
+            {/* <Link to={`/posts/${popular}`} key={popular}> */}
+            <Link>
+              <FlatButton label="Popular" primary onClick={sortByPop.bind(this)} />
+            </Link>
           </ToolbarGroup>
         </Toolbar>
         <div className={styles.postListContainer}>
@@ -39,6 +58,17 @@ class PostList extends PureComponent {
         </div>
       </div>
     );
+  }
+}
+// function that gets the newest/popular PostList
+export function getPostList(sortType) {
+  switch (sortType) {
+    case 'newest':
+      return new PostList('newest');
+    case 'popular':
+      return new PostList('popular');
+    default:
+      return PostList;
   }
 }
 
@@ -56,12 +86,9 @@ const mapDispatchToProps = (dispatch) => ({
   sortByPop: () => {
     dispatch(sortByPopularity());
   },
+  sortByNew: () => {
+    dispatch(sortByNewest());
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostList);
-
-
-// PostList.propTypes = {
-//   params: PropTypes.object.isRequired,
-// };
-
