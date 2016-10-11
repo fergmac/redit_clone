@@ -48,7 +48,7 @@ Your project must:
 - [X] Contain components created using `React.Component`, `const`, or `function` only
 - [X] Chain transformations with array methods (`.map`, `.filter`, etc.)
 - [X] Use CSS modules for inline styles
-- [X] Use React Lifecycle method where appropriate
+- [ ] Use React Lifecycle method where appropriate
 - [X] Implement React Router to:
   - Use nested routes with a `Layout` component
   - Implement a top-level `IndexRoute`
@@ -70,7 +70,7 @@ Your project must:
 
 - [X] Contain an organized file tree ([see an example](http://marmelab.com/blog/2015/12/17/react-directory-structure.html))
 - [X] Use sub-directories to organize component files (on a per component basis)
-- [ ] Be free of lint errors from ESLint
+- [X] Be free of lint errors from ESLint
 - [X] Use a unique `key` for all items in lists
 - [X] Use `propType` validations for all components
 - [X] Be free of `propType` validation errors in console
