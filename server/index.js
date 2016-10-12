@@ -1,10 +1,12 @@
 const fs = require('fs');
 const resolve = require('path').resolve;
 const express = require('express');
+const socket = require('./socket')(3030);
 const app = express();
 
 const production = process.env.NODE_ENV === 'production';
 const port = production ? 8080 : 8181;
+const middleware = require('./middleware')(app);
 
 app.use(express.static(resolve(process.cwd(), '.build')));
 
