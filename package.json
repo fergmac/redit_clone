@@ -14,7 +14,8 @@
   "scripts": {
     "start": "webpack-validator .webpack/webpack.dev.client.config.js && concurrently 'npm run watch' 'cross-env NODE_ENV=development node --harmony server' 'npm run browsersync'",
     "browsersync": "browser-sync start --config .webpack/browsersync.js",
-    "watch": "webpack --watch --config '.webpack/webpack.dev.client.config.js'"
+    "watch": "webpack --watch --config '.webpack/webpack.dev.client.config.js'",
+    "server": "node server/index.js"
   },
   "babel": {
     "env": {
@@ -49,7 +50,8 @@
     "react-tap-event-plugin": "1.0.0",
     "redux": "^3.6.0",
     "redux-logger": "^2.7.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "socket.io": "^1.5.0"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -103,8 +105,8 @@
     "run-sequence": "^1.2.2",
     "style-loader": "^0.13.1",
     "webpack": "2.1.0-beta.13",
-    "webpack-dev-middleware": "1.6.1",
-    "webpack-hot-middleware": "2.12.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.1",
     "webpack-validator": "^2.2.4"
   }
 }

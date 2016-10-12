@@ -16,7 +16,7 @@ module.exports = {
   devtool: 'inline-source-map',
 
   entry: [
-    path.join(process.cwd(), 'web.browser/react.app.js'),
+    path.join(process.cwd(), 'src/client/web.browser/react.app.js'),
   ],
 
   output: {
@@ -63,7 +63,7 @@ module.exports = {
   plugins: [
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(process.cwd(), 'web.browser/index.html'),
+      template: path.resolve(process.cwd(), 'src/client/web.browser/index.html'),
       inject: true,
     }),
     new webpack.DefinePlugin({

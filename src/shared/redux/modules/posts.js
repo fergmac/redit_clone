@@ -5,12 +5,12 @@ const SORT_BY_NEWEST = 'SORT_BY_NEWEST';
 const LOAD_POSTS = 'LOAD_POSTS';
 
 // sort votes function
-const sortByVotes = (key) => (a, b) => {
+const sortByKey = (key, order = 1) => (a, b) => {
   switch (true) {
     case a[key] < b[key]:
-      return 1;
+      return (1 * order);
     case a[key] > b[key]:
-      return -1;
+      return (-1 * order);
     default:
       return 0;
   }
@@ -36,10 +36,12 @@ export const loadPosts = (lessonId) => ({
 export const voteUp = (id) => ({
   type: VOTE_UP,
   payload: { id },
+  meta: { remote: true },
 });
 
 export const sortByPopularity = () => ({
   type: SORT_BY_POPULARITY,
+  meta: { remote: true },
 });
 
 export const sortByNewest = () => ({
@@ -79,9 +81,10 @@ const reducer = (posts = defaultPosts, action) => {
         return post;
       });
     case SORT_BY_POPULARITY:
-      return posts.sort(sortByVotes('votes'));
-   // case SORT_BY_NEWEST:
-      // return posts.sort(sortByDate()).map(date => {(moment(date).fromNow())})
+      return posts.sort(sortByKey('votes')).slice();
+    case SORT_BY_NEWEST:
+      return posts.sort(sortByKey('date')).slice();
+      // add date to data array
     default:
       return posts;
   }

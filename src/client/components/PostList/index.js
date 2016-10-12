@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import styles from './style.css';
 import Post from '../Post';
 import { connect } from 'react-redux';
-import { voteUp, sortByPopularity, sortByNewest, loadPosts } from '../../redux/modules/posts.js';
+import { voteUp, sortByPopularity, sortByNewest, loadPosts } from '../../../shared/redux/modules/posts.js';
 import FlatButton from 'material-ui/FlatButton';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 import { Link } from 'react-router';

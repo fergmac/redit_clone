@@ -16,11 +16,11 @@ module.exports = {
   progress: true,
 
   entry: [
-    path.join(process.cwd(), 'web.browser/react.app.js'),
+    path.join(process.cwd(), 'src/client/web.browser/react.app.js'),
   ],
 
   output: {
-    path: path.resolve(process.cwd(), '.build/production/web.browser'),
+    path: path.resolve(process.cwd(), '.build/production/src/client/web.browser'),
     publicPath: '/',
     filename: '[name].[hash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
@@ -75,7 +75,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(process.cwd(), 'web.browser/index.html'),
+      template: path.resolve(process.cwd(), 'src/client/web.browser/index.html'),
       minify: {
         removeComments: true,
         collapseWhitespace: true,
