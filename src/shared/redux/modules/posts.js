@@ -3,6 +3,7 @@ const VOTE_UP = 'VOTE_UP';
 const SORT_BY_POPULARITY = 'SORT_BY_POPULARITY';
 const SORT_BY_NEWEST = 'SORT_BY_NEWEST';
 const LOAD_POSTS = 'LOAD_POSTS';
+const STATE_UPDATE = 'STATE_UPDATE';
 
 // sort votes function
 const sortByKey = (key, order = 1) => (a, b) => {
@@ -28,29 +29,34 @@ const sortByKey = (key, order = 1) => (a, b) => {
 // };
 
 // action creators
-export const loadPosts = (lessonId) => ({
+const loadPosts = (lessonId) => ({
   type: LOAD_POSTS,
   payload: { lessonId },
 });
+exports.loadPosts = loadPosts;
 
-export const voteUp = (id) => ({
+const voteUp = (id) => ({
   type: VOTE_UP,
   payload: { id },
   meta: { remote: true },
 });
+exports.voteUp = voteUp;
 
-export const sortByPopularity = () => ({
+const sortByPopularity = () => ({
   type: SORT_BY_POPULARITY,
   meta: { remote: true },
 });
+exports.sortByPopularity = sortByPopularity;
 
-export const sortByNewest = () => ({
+const sortByNewest = () => ({
   type: SORT_BY_NEWEST,
 });
+exports.sortByNewest = sortByNewest;
 
 const defaultPosts = [{
   id: 1,
   author: 'Mackenzie',
+  voters: new Set(),
   votes: 0,
   date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
   lessonId: 1,
@@ -60,6 +66,7 @@ const defaultPosts = [{
 }, {
   id: 2,
   author: 'Shawn',
+  voeters: new Set(),
   votes: 5,
   date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
   lessonId: 2,
@@ -76,7 +83,9 @@ const reducer = (posts = defaultPosts, action) => {
     case VOTE_UP:
       return posts.map((post) => {
         if (action.payload.id === post.id) {
-          post.votes += 1;
+          // post.votes += 1;
+          post.voters.add(action.clientId); // do in DB
+          post.votes = post.voters.size;
         }
         return post;
       });
@@ -85,13 +94,14 @@ const reducer = (posts = defaultPosts, action) => {
     case SORT_BY_NEWEST:
       return posts.sort(sortByKey('date')).slice();
       // add date to data array
+    case STATE_UPDATE:
+      return action.payload.posts;
     default:
       return posts;
   }
 };
 
-export default reducer;
-
+exports.default = reducer;
 
 // better?
 

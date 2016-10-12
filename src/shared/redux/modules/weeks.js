@@ -1,7 +1,6 @@
 // action types
 // const VOTE_UP = 'VOTE_UP';
 
-
 // action creators
 // export const voteUp = (id) => ({
 //   type: VOTE_UP,
@@ -31,7 +30,8 @@ const defaultWeeks = [{
     { name: 'Async', id: 7 },
   ],
 }];
+
 // all changes to Week data here
 const reducer = (weeks = defaultWeeks) => weeks;
 
-export default reducer;
+exports.default = reducer;

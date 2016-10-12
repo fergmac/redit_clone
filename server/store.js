@@ -1,6 +1,4 @@
-import { createStore } from 'redux';
-import reducers from '../src/shared/redux/reducers';
+const createStore = require('redux').createStore;
+const reducers = require('../src/shared/redux/reducers');
 
-export default createStore(reducers, {});
-
-
+module.exports = createStore(reducers, {});

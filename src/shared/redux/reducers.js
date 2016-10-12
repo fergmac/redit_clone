@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import weeks from './modules/weeks.js';
-import posts from './modules/posts.js';
+const combineReducers = require('redux').combineReducers;
+const weeks = require('./modules/weeks.js').default;
+const posts = require('./modules/posts.js').default;
 
-export default combineReducers({
+module.exports = combineReducers({
   weeks,
   posts,
 });
