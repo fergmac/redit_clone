@@ -5,9 +5,14 @@ import reducers from '../shared/redux/reducers';
 import remoteMiddleware from './socket/remoteMiddleware';
 import socket from './socket';
 
-const logger = createLogger({ diff: true });
+const middlewareList = [reduxThunk, remoteMiddleware(socket)];
 
-const middlewares = applyMiddleware(reduxThunk, remoteMiddleware(socket), logger);
+if (process.env.NODE_ENV !== 'PRODUCTION') {
+  const logger = createLogger({ diff: true });
+  middlewareList.push(logger);
+}
+
+const middlewares = applyMiddleware(...middlewareList);
 
 const store = createStore(reducers, middlewares);
 
