@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import store from '../store';
-import { voteUp, sortByPopularity } from '../../shared/redux/modules/posts';
+import { voteUp, sortByPopularity } from '../../shared/redux/modules/albums';
 import { Provider } from 'react-redux';
 import '../socket';
 
@@ -18,8 +18,8 @@ import Layout from '../components/Layout';
 import App from '../containers/App';
 import Welcome from '../components/Welcome';
 import LoginForm from '../components/LoginForm';
-import CreatePost from '../components/CreatePost';
-import PostList from '../components/PostList';
+import AddAlbum from '../components/AddAlbum';
+import AlbumList from '../components/AlbumList';
 
 // Needed for onTouchTap (Material UI)
 // http://stackoverflow.com/a/34015469/988941
@@ -38,11 +38,11 @@ ReactDOM.render(
           <Route component={App}>
             <IndexRoute component={Welcome} />
             <Route path="login" component={LoginForm} />
-            <Route path="posts" >
-              <Route path="new" component={CreatePost} />
-              <Route path=":lessonId" component={PostList} />
-           {/*   <Route path="newest" component={getPostList('newest')} />
-              <Route path="popular" component={getPostList('popular')} /> */}
+            <Route path="albums" >
+              <Route path="new" component={AddAlbum} />
+              <Route path=":albumId" component={AlbumList} />
+           {/*   <Route path="newest" component={getAlbumList('newest')} />
+              <Route path="popular" component={getAlbumList('popular')} /> */}
             </Route>
           </Route>
         </Route>

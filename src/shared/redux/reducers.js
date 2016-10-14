@@ -1,8 +1,8 @@
 const combineReducers = require('redux').combineReducers;
-const weeks = require('./modules/weeks.js').default;
-const posts = require('./modules/posts.js').default;
+const genres = require('./modules/genres.js').default;
+const albums = require('./modules/albums.js').default;
 
 module.exports = combineReducers({
-  weeks,
-  posts,
+  genres, // weeks
+  albums, // posts
 });

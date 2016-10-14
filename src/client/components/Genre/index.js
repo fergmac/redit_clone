@@ -4,25 +4,25 @@ import styles from './style.css';
 import { List, ListItem } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import { Link } from 'react-router';
+// was weeks
+const Genre = ({ genre }) => (
 
-const Week = ({ week }) => (
-
-  <div className={styles.week}>
-    <Subheader>{week.title}</Subheader>
+  <div className={styles.genre}>
+    <Subheader>{genre.title}</Subheader>
     <Divider />
     <List>
-      {week.lessons.map((lesson) => (
-        <Link to={`/posts/${lesson.id}`} key={lesson.id}>
+      {genre.albums.map((album) => (
+        <Link to={`/albums/${album.id}`} key={album.id}>
           <ListItem className={styles.links}>
-            {lesson.name}
+            {album.name}
           </ListItem>
         </Link>))}
     </List>
   </div>
 );
 
-Week.propTypes = {
-  week: PropTypes.object.isRequired,
+Genre.propTypes = {
+  genre: PropTypes.object.isRequired,
 };
 
-export default Week;
+export default Genre;

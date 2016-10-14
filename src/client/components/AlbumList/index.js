@@ -1,14 +1,14 @@
 import React, { PureComponent } from 'react';
 import styles from './style.css';
-import Post from '../Post';
+import Album from '../Album';
 import { connect } from 'react-redux';
-import { voteUp, sortByPopularity, sortByNewest, loadPosts } from '../../../shared/redux/modules/posts.js';
+import { voteUp, sortByPopularity, sortByNewest, loadAlbums } from '../../../shared/redux/modules/albums';
 import FlatButton from 'material-ui/FlatButton';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 import { Link } from 'react-router';
 
-
-class PostList extends PureComponent {
+// was postList
+class AlbumList extends PureComponent {
   constructor(sortType = null) {
     super();
     this.sortType = sortType;
@@ -32,13 +32,13 @@ class PostList extends PureComponent {
   }
   render() {
     // variable so i don't have to write this.props in front
-    const { posts, params, voteUps, sortByNew, sortByPop } = this.props;
+    const { albums, params, voteUps, sortByNew, sortByPop } = this.props;
     // parseInt turns the params from a string into a number
-    const correctPost = posts.filter((post) => parseInt(params.lessonId, 10) === post.id);
+    const correctAlbum = albums.filter((album) => parseInt(params.albumId, 10) === album.id);
     // console.log(this.props);
     return (
       <div>
-        <Toolbar className={styles.postToolbar}>
+        <Toolbar className={styles.albumToolbar}>
           <ToolbarGroup>
             <ToolbarTitle text="Albums" />
           </ToolbarGroup>
@@ -53,8 +53,8 @@ class PostList extends PureComponent {
             </Link>
           </ToolbarGroup>
         </Toolbar>
-        <div className={styles.postListContainer}>
-            {correctPost.map((post) => (<Post post={post} voteUp={voteUps} key={post.id} />))}
+        <div className={styles.albumListContainer}>
+            {correctAlbum.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
         </div>
       </div>
     );
@@ -73,12 +73,12 @@ class PostList extends PureComponent {
 // }
 
 const mapStateToProps = state => ({
-  posts: state.posts,
+  albums: state.albums,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  loadPosts: (lessonId) => {
-    dispatch(loadPosts(lessonId));
+  loadAlbums: (albumId) => {
+    dispatch(loadAlbums(albumId));
   },
   voteUps: (id) => {
     dispatch(voteUp(id));
@@ -91,4 +91,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostList);
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumList);

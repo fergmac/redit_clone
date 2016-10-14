@@ -11,10 +11,10 @@ const HeaderBar = () => (
 
   <AppBar
     className={style.fixedHeader}
-    title={<span>REDit</span>}
+    title={<span>HEARDit</span>}
     iconElementRight={
       <div>
-        <FlatButton label="New Post" style={white} />
+        <FlatButton label="New Album" style={white} />
         <FlatButton label="Log Out" style={white} />
       </div>}
   />

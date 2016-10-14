@@ -1,11 +1,11 @@
 import React from 'react';
-import Lessons from '../../components/Lessons';
+import AlbumCollection from '../../components/AlbumCollection';
 import styles from './styles.css';
 
 
 const App = (props) => (
   <div>
-    <Lessons />
+    <AlbumCollection />
     <div className={styles.viewContainer}>
       {props.children}
     </div>

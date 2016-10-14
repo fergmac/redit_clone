@@ -3,7 +3,7 @@
 const VOTE_UP = 'VOTE_UP';
 const SORT_BY_POPULARITY = 'SORT_BY_POPULARITY';
 const SORT_BY_NEWEST = 'SORT_BY_NEWEST';
-const LOAD_POSTS = 'LOAD_POSTS';
+const LOAD_ALBUMS = 'LOAD_ALBUMS';
 const STATE_UPDATE = 'STATE_UPDATE';
 
 // sort votes function
@@ -30,11 +30,11 @@ const sortByKey = (key, order = 1) => (a, b) => {
 // };
 
 // action creators
-const loadPosts = (lessonId) => ({
-  type: LOAD_POSTS,
-  payload: { lessonId },
+const loadAlbums = (albumId) => ({
+  type: LOAD_ALBUMS,
+  payload: { albumId },
 });
-exports.loadPosts = loadPosts;
+exports.loadAlbums = loadAlbums;
 
 const voteUp = (id) => ({
   type: VOTE_UP,
@@ -55,52 +55,99 @@ const sortByNewest = () => ({
 exports.sortByNewest = sortByNewest;
 
 
-const defaultPosts = [{
+const defaultAlbums = [{
   id: 1,
-  author: 'Mackenzie',
+  author: 'Eddie Lang',
   voters: new Set(),
   votes: 1,
   date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
-  lessonId: 1,
-  title: 'first React!!!!',
-  description: 'Some React resource',
-  link: '//github.com/react',
+  albumId: 1,
+  title: 'Pioneer of Jazz Guitar',
+  description: '1927-1939 acoustic jazz guitar',
+  link: 'https://www.youtube.com/watch?v=K1Kw8L6rYt0',
 }, {
   id: 2,
-  author: 'Shawn',
+  author: 'Ernest Ranglin',
   voters: new Set(),
   votes: 5,
   date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
-  lessonId: 2,
-  title: 'second React ?',
-  description: 'Some React resource',
-}];
+  albumId: 2,
+  title: 'Jazz Jamaica',
+  description: 'Jamaican Jazz Guitar',
+}, {
+  id: 3,
+  author: 'Sam & Dave',
+  voters: new Set(),
+  votes: 5,
+  date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
+  albumId: 3,
+  title: 'Soul Men',
+  description: '1967 R&B soul duo',
+}, {
+  id: 4,
+  author: 'Solange',
+  voters: new Set(),
+  votes: 5,
+  date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
+  albumId: 4,
+  title: 'A Seat At The Table',
+  description: 'American Singer Songwriter',
+}, {
+  id: 5,
+  author: 'Rev. Gary Davis',
+  voters: new Set(),
+  votes: 5,
+  date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
+  albumId: 5,
+  title: 'Harlem Street Singer',
+  description: '1960\'s fingerstyle guitar',
+}, {
+  id: 6,
+  author: 'Henry Thomas',
+  voters: new Set(),
+  votes: 5,
+  date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
+  albumId: 6,
+  title: 'Texas Worried Blues',
+  description: 'Pre War Country Blues',
+}, {
+  id: 7,
+  author: 'Elizabeth Cotton',
+  voters: new Set(),
+  votes: 5,
+  date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
+  albumId: 7,
+  title: 'Shake Sugaree',
+  description: '1960\'s fingerstyle guitar',
+},
+
+];
 
 
 // all changes to Post and Week data here
-const reducer = (posts = defaultPosts, action) => {
+const reducer = (albums = defaultAlbums, action) => {
   switch (action.type) {
     // case LOAD_POSTS:
     //   return posts.filter((post) => parseInt(action.payload.lessonId, 10) === post.id);
     case VOTE_UP:
-      return posts.map((post) => {
-        if (action.payload.id === post.id) {
+      return albums.map((album) => {
+        if (action.payload.id === album.id) {
           // post.votes += 1;
-          post.voters.add(action.clientId); // do in DB
-          post.votes = post.voters.size;
+          album.voters.add(action.clientId); // do in DB
+          album.votes = album.voters.size;
         }
-        return post;
+        return album;
       });
     case SORT_BY_POPULARITY:
-      return posts.sort(sortByKey('votes')).slice();
+      return albums.sort(sortByKey('votes')).slice();
     case SORT_BY_NEWEST:
-      return posts.sort(sortByKey('date')).slice();
+      return albums.sort(sortByKey('date')).slice();
       // add date to data array
     case STATE_UPDATE:
       console.log(action.payload);
-      return action.payload.posts;
+      return action.payload.albums;
     default:
-      return posts;
+      return albums;
   }
 };
 
