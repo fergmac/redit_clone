@@ -27,6 +27,8 @@ class AlbumList extends PureComponent {
   //       this.props.loadPosts();
   //   }
   // }
+
+
   componentDidUpdate() {
     // this.props.sortByPopularity();
   }
@@ -34,8 +36,32 @@ class AlbumList extends PureComponent {
     // variable so i don't have to write this.props in front
     const { albums, params, voteUps, sortByNew, sortByPop } = this.props;
     // parseInt turns the params from a string into a number
-    const correctAlbum = albums.filter((album) => parseInt(params.albumId, 10) === album.id);
+    if (params) {
+      const correctAlbum = albums.filter((album) => parseInt(params.albumId, 10) === album.id);
     // console.log(this.props);
+      return (
+        <div>
+          <Toolbar className={styles.albumToolbar}>
+            <ToolbarGroup>
+              <ToolbarTitle text="Albums" />
+            </ToolbarGroup>
+            <ToolbarGroup>
+              <ToolbarTitle text="Sort:" />
+              <Link>
+                <FlatButton label="Newest" primary onClick={sortByNew.bind(this)} />
+              </Link>
+              {/* <Link to={`/posts/${popular}`} key={popular}> */}
+              <Link>
+                <FlatButton label="Popular" primary onClick={sortByPop.bind(this)} />
+              </Link>
+            </ToolbarGroup>
+          </Toolbar>
+          <div className={styles.albumListContainer}>
+              {correctAlbum.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
+          </div>
+        </div>
+      );
+    }
     return (
       <div>
         <Toolbar className={styles.albumToolbar}>
@@ -54,7 +80,7 @@ class AlbumList extends PureComponent {
           </ToolbarGroup>
         </Toolbar>
         <div className={styles.albumListContainer}>
-            {correctAlbum.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
+            {albums.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
         </div>
       </div>
     );
