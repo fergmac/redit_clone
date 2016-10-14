@@ -36,7 +36,7 @@ class AlbumList extends PureComponent {
     // variable so i don't have to write this.props in front
     const { albums, params, voteUps, sortByNew, sortByPop } = this.props;
     // parseInt turns the params from a string into a number
-    if (params) {
+    if (params.albumId) {
       const correctAlbum = albums.filter((album) => parseInt(params.albumId, 10) === album.id);
     // console.log(this.props);
       return (

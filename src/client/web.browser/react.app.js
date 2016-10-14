@@ -16,7 +16,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import muiTheme from './styles/theme';
 import Layout from '../components/Layout';
 import App from '../containers/App';
-import Welcome from '../components/Welcome';
+// import Welcome from '../components/Welcome';
 import LoginForm from '../components/LoginForm';
 import AddAlbum from '../components/AddAlbum';
 import AlbumList from '../components/AlbumList';
@@ -36,7 +36,7 @@ ReactDOM.render(
       <Router history={browserHistory}>
         <Route path="/" component={Layout}>
           <Route component={App}>
-            <IndexRoute component={Welcome} />
+            <IndexRoute component={AlbumList} />
             <Route path="login" component={LoginForm} />
             <Route path="albums" >
               <Route path="new" component={AddAlbum} />

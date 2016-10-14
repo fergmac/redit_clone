@@ -4,7 +4,7 @@ import * as colors from 'material-ui/styles/colors';
 const muiTheme = getMuiTheme({
   fontFamily: 'Roboto, sans-serif',
   palette: {
-    primary1Color: colors.red900,
+    primary1Color: colors.cyan400,
     primary2Color: colors.cyan700,
     primary3Color: colors.grey400,
     accent1Color: colors.pinkA200,

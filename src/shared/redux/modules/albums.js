@@ -84,6 +84,15 @@ const defaultAlbums = [{
   title: 'Soul Men',
   description: '1967 R&B soul duo',
 }, {
+  id: 3,
+  author: 'Sam & Dave',
+  voters: new Set(),
+  votes: 1,
+  date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
+  albumId: 3,
+  title: 'Hold On, I\'m Comin\'',
+  description: '1966 R&B soul duo',
+}, {
   id: 4,
   author: 'Solange',
   voters: new Set(),
