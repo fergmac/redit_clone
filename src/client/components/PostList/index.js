@@ -40,16 +40,16 @@ class PostList extends PureComponent {
       <div>
         <Toolbar className={styles.postToolbar}>
           <ToolbarGroup>
-            <ToolbarTitle text="Posts" />
+            <ToolbarTitle text="Albums" />
           </ToolbarGroup>
           <ToolbarGroup>
             <ToolbarTitle text="Sort:" />
             <Link>
-              <FlatButton label="Newest" primary onClick={sortByNew.bind(this)} />
+              <FlatButton label="Newest" onClick={sortByNew.bind(this)} />
             </Link>
             {/* <Link to={`/posts/${popular}`} key={popular}> */}
             <Link>
-              <FlatButton label="Popular" primary onClick={sortByPop.bind(this)} />
+              <FlatButton label="Popular" onClick={sortByPop.bind(this)} />
             </Link>
           </ToolbarGroup>
         </Toolbar>

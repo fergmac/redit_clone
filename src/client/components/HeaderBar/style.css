@@ -1,4 +1,5 @@
 .fixedHeader {
     position: fixed !important;
     top: 0;
+    background-color: darkturquoise !important;
 }
