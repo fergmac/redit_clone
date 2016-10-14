@@ -9,10 +9,7 @@ const startSocketServer = (port) => {
     console.log('socket connected');
     console.log(uuid());
     socket.emit('clientId', uuid());
-    socket.emit('state', {
-      type: 'STATE_UPDATE',
-      payload: store.getState(),
-    });
+    socket.emit('state', store.getState());
 
     socket.on('state', (action) => {
       // check for clientId, if none, emit a new clientId
@@ -28,10 +25,7 @@ const startSocketServer = (port) => {
       // listens to store for data changing and then emits action of new state, this also does our syncing
       store.subscribe(() => {
         // absolute truth of the data is served in the server
-        // socket.emit('state', {
-        //   type: 'STATE_UPDATE',
-        //   payload: store.getState(),
-        // });
+        socket.emit('state', store.getState());
       });
     });
   });

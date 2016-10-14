@@ -5,7 +5,7 @@ import reducers from '../shared/redux/reducers';
 import remoteMiddleware from './socket/remoteMiddleware';
 import socket from './socket';
 
-const logger = createLogger();
+const logger = createLogger({ diff: true });
 
 const middlewares = applyMiddleware(reduxThunk, remoteMiddleware(socket), logger);
 

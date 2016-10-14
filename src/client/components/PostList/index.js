@@ -61,16 +61,16 @@ class PostList extends PureComponent {
   }
 }
 // function that gets the newest/popular PostList
-export function getPostList(sortType) {
-  switch (sortType) {
-    case 'newest':
-      return new PostList('newest');
-    case 'popular':
-      return new PostList('popular');
-    default:
-      return PostList;
-  }
-}
+// export function getPostList(sortType) {
+//   switch (sortType) {
+//     case 'newest':
+//       return new PostList('newest');
+//     case 'popular':
+//       return new PostList('popular');
+//     default:
+//       return PostList;
+//   }
+// }
 
 const mapStateToProps = state => ({
   posts: state.posts,

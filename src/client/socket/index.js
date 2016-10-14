@@ -11,10 +11,10 @@ socket.on('clientId', (id) => {
   if (!localStorage.getItem('clientId'));
   localStorage.setItem('clientId', id);
 });
-socket.on('state', nextState => {
+socket.on('state', payload => {
   store.dispatch({
     type: 'STATE_UPDATE',
-    payload: nextState,
+    payload,
   });
 });
 export default socket;

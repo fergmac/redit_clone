@@ -19,7 +19,7 @@ import App from '../containers/App';
 import Welcome from '../components/Welcome';
 import LoginForm from '../components/LoginForm';
 import CreatePost from '../components/CreatePost';
-import PostList, { getPostList } from '../components/PostList';
+import PostList from '../components/PostList';
 
 // Needed for onTouchTap (Material UI)
 // http://stackoverflow.com/a/34015469/988941
@@ -41,8 +41,8 @@ ReactDOM.render(
             <Route path="posts" >
               <Route path="new" component={CreatePost} />
               <Route path=":lessonId" component={PostList} />
-              <Route path="ne  west" component={getPostList('newest')} />
-              <Route path="popular" component={getPostList('popular')} />
+           {/*   <Route path="newest" component={getPostList('newest')} />
+              <Route path="popular" component={getPostList('popular')} /> */}
             </Route>
           </Route>
         </Route>

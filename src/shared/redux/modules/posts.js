@@ -1,3 +1,4 @@
+// @flow
 // action types
 const VOTE_UP = 'VOTE_UP';
 const SORT_BY_POPULARITY = 'SORT_BY_POPULARITY';
@@ -53,11 +54,12 @@ const sortByNewest = () => ({
 });
 exports.sortByNewest = sortByNewest;
 
+
 const defaultPosts = [{
   id: 1,
   author: 'Mackenzie',
   voters: new Set(),
-  votes: 0,
+  votes: 1,
   date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
   lessonId: 1,
   title: 'first React!!!!',
@@ -66,7 +68,7 @@ const defaultPosts = [{
 }, {
   id: 2,
   author: 'Shawn',
-  voeters: new Set(),
+  voters: new Set(),
   votes: 5,
   date: 'Fri Oct 07 2016 15:24:13 GMT-0700 (PDT)',
   lessonId: 2,
@@ -95,6 +97,7 @@ const reducer = (posts = defaultPosts, action) => {
       return posts.sort(sortByKey('date')).slice();
       // add date to data array
     case STATE_UPDATE:
+      console.log(action.payload);
       return action.payload.posts;
     default:
       return posts;
@@ -102,6 +105,7 @@ const reducer = (posts = defaultPosts, action) => {
 };
 
 exports.default = reducer;
+
 
 // better?
 
