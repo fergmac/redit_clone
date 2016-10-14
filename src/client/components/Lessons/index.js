@@ -4,7 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import Drawer from 'material-ui/Drawer';
 import Week from '../Week';
-import SiteIcon from 'material-ui/svg-icons/communication/import-contacts';
+import SiteIcon from 'material-ui/svg-icons/av/library-music';
 // import data from '../../data.js';
 import { connect } from 'react-redux';
 
@@ -14,7 +14,7 @@ class Lessons extends PureComponent {
       <Drawer>
         <AppBar
           className={style.lessons}
-          title={<span>REDit</span>}
+          title={<span>HEARDit</span>}
           iconElementLeft={
             <IconButton>
               <SiteIcon />
