@@ -8,8 +8,9 @@ socket.on('connect', () => {
 });
 
 socket.on('clientId', (id) => {
-  if (!localStorage.getItem('clientId'));
-  localStorage.setItem('clientId', id);
+  if (!localStorage.getItem('clientId')) {
+    localStorage.setItem('clientId', id);
+  }
 });
 socket.on('state', payload => {
   store.dispatch({

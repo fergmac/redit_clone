@@ -74,6 +74,7 @@ const defaultAlbums = [{
   albumId: 2,
   title: 'Jazz Jamaica',
   description: 'Jamaican Jazz Guitar',
+  link: '',
 }, {
   id: 3,
   author: 'Sam & Dave',
@@ -83,6 +84,7 @@ const defaultAlbums = [{
   albumId: 3,
   title: 'Soul Men',
   description: '1967 R&B soul duo',
+  link: '',
 }, {
   id: 3,
   author: 'Sam & Dave',
@@ -92,6 +94,7 @@ const defaultAlbums = [{
   albumId: 3,
   title: 'Hold On, I\'m Comin\'',
   description: '1966 R&B soul duo',
+  link: '',
 }, {
   id: 4,
   author: 'Solange',
@@ -101,6 +104,7 @@ const defaultAlbums = [{
   albumId: 4,
   title: 'A Seat At The Table',
   description: 'American Singer Songwriter',
+  link: '',
 }, {
   id: 5,
   author: 'Rev. Gary Davis',
@@ -110,6 +114,7 @@ const defaultAlbums = [{
   albumId: 5,
   title: 'Harlem Street Singer',
   description: '1960\'s fingerstyle guitar',
+  link: '',
 }, {
   id: 6,
   author: 'Henry Thomas',
@@ -119,6 +124,7 @@ const defaultAlbums = [{
   albumId: 6,
   title: 'Texas Worried Blues',
   description: 'Pre War Country Blues',
+  link: '',
 }, {
   id: 7,
   author: 'Elizabeth Cotton',
@@ -128,6 +134,7 @@ const defaultAlbums = [{
   albumId: 7,
   title: 'Shake Sugaree',
   description: '1960\'s fingerstyle guitar',
+  link: '',
 },
 
 ];
