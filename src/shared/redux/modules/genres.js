@@ -10,24 +10,24 @@
 const defaultGenres = [{
   id: '0',
   title: 'Jazz',
-  albums: [
-    { name: 'Pioneers of Jazz Guitar', id: 1 },
-    { name: 'Jazz Jamaica', id: 2 },
+  artists: [
+    { name: 'Eddie Lang', id: 1 },
+    { name: 'Ernest Ranglin', id: 2 },
   ],
 }, {
   id: '1',
   title: 'Soul',
-  albums: [
-    { name: 'Soul Men', id: 3 },
-    { name: 'A Seat At The Table', id: 4 },
+  artists: [
+    { name: 'Sam & Dave', id: 3 },
+    { name: 'Solange', id: 4 },
   ],
 }, {
   id: '2',
   title: 'Blues',
-  albums: [
-    { name: 'Harlem Street Singer', id: 5 },
-    { name: 'Texas Worried Blues', id: 6 },
-    { name: 'Shake Sugaree', id: 7 },
+  artists: [
+    { name: 'Rev. Gary Davis', id: 5 },
+    { name: 'Henry Thomas', id: 6 },
+    { name: 'Elizabeth Cotton', id: 7 },
   ],
 }];
 

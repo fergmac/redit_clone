@@ -11,10 +11,10 @@ const Genre = ({ genre }) => (
     <Subheader>{genre.title}</Subheader>
     <Divider />
     <List>
-      {genre.albums.map((album) => (
-        <Link to={`/albums/${album.id}`} key={album.id}>
+      {genre.artists.map((artist) => (
+        <Link to={`/albums/${artist.id}`} key={artist.id}>
           <ListItem className={styles.links}>
-            {album.name}
+            {artist.name}
           </ListItem>
         </Link>))}
     </List>
