@@ -8,11 +8,14 @@ import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 import { Link } from 'react-router';
 
 // was postList
+const newest = 'newest';
+const popular = 'popular';
+
 class AlbumList extends PureComponent {
-  constructor(sortType = null) {
-    super();
-    this.sortType = sortType;
-  }
+  // constructor(sortType = null) {
+  //   super();
+  //   this.sortType = sortType;
+  // }
 
   // componentWillMount() {
   //   // dispatch sort by newest/popular
@@ -28,17 +31,38 @@ class AlbumList extends PureComponent {
   //   }
   // }
 
-
-  componentDidUpdate() {
-    // this.props.sortByPopularity();
+  renderSortedAlbums(sortOrder) {
+    switch (sortOrder) {
+      case newest:
+        return this.props.albums.sort((album, nextAlbum) => album.date < nextAlbum.date);
+      case popular:
+        return this.props.albums.sort((album, nextAlbum) => album.votes < nextAlbum.votes);
+      default:
+        return this.props.albums.sort((album, nextAlbum) => album.date < nextAlbum.date);
+    }
   }
+  // renderAlbum(album, index) {
+  //   return (
+  //     <div key={index}>
+  //       <h2>Title: {album.title}</h2>
+  //       <p>{album.date.toString()}</p>
+  //       <p>Votes: {album.votes}</p>
+  //     </div>
+  //   );
+  // }
+
+  // componentDidUpdate() {
+  //   // this.props.sortByPopularity();
+  //   // this.props.sortByNewest();
+  // }
   render() {
+    // const sortOrder = this.props.location.query.sort;
     // variable so i don't have to write this.props in front
     const { albums, params, voteUps, sortByNew, sortByPop } = this.props;
     // parseInt turns the params from a string into a number
     if (params.albumId) {
-      const correctAlbum = albums.filter((album) => parseInt(params.albumId, 10) === album.id);
-    // console.log(this.props);
+      const correctAlbum = this.props.albums.filter((album) => parseInt(params.albumId, 10) === album.id);
+      // console.log(this.props);
       return (
         <div>
           <Toolbar className={styles.albumToolbar}>
@@ -47,17 +71,17 @@ class AlbumList extends PureComponent {
             </ToolbarGroup>
             <ToolbarGroup>
               <ToolbarTitle text="Sort:" />
-              <Link>
+              <Link to={{ pathname: '/AlbumList', query: { sort: newest } }}>
                 <FlatButton label="Newest" primary onClick={sortByNew.bind(this)} />
               </Link>
               {/* <Link to={`/posts/${popular}`} key={popular}> */}
-              <Link>
+              <Link to={{ pathname: '/AlbumList', query: { sort: popular } }}>
                 <FlatButton label="Popular" primary onClick={sortByPop.bind(this)} />
               </Link>
             </ToolbarGroup>
           </Toolbar>
           <div className={styles.albumListContainer}>
-              {correctAlbum.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
+            {correctAlbum.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
           </div>
         </div>
       );
@@ -70,17 +94,17 @@ class AlbumList extends PureComponent {
           </ToolbarGroup>
           <ToolbarGroup>
             <ToolbarTitle text="Sort:" />
-            <Link>
+            <Link to={{ pathname: '/AlbumList', query: { sort: newest } }}>
               <FlatButton label="Newest" onClick={sortByNew.bind(this)} />
             </Link>
             {/* <Link to={`/posts/${popular}`} key={popular}> */}
-            <Link>
+            <Link to={{ pathname: '/AlbumList', query: { sort: popular } }}>
               <FlatButton label="Popular" onClick={sortByPop.bind(this)} />
             </Link>
           </ToolbarGroup>
         </Toolbar>
         <div className={styles.albumListContainer}>
-            {albums.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
+          {albums.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
         </div>
       </div>
     );
@@ -118,3 +142,51 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumList);
+
+//       return (
+//         <div>
+//           <Toolbar className={styles.albumToolbar}>
+//             <ToolbarGroup>
+//               <ToolbarTitle text="Albums" />
+//             </ToolbarGroup>
+//             <ToolbarGroup>
+//               <ToolbarTitle text="Sort:" />
+//               <Link>
+//                 <FlatButton label="Newest" primary onClick={sortByNew.bind(this)} />
+//               </Link>
+//               {/* <Link to={`/posts/${popular}`} key={popular}> */}
+//               <Link>
+//                 <FlatButton label="Popular" primary onClick={sortByPop.bind(this)} />
+//               </Link>
+//             </ToolbarGroup>
+//           </Toolbar>
+//           <div className={styles.albumListContainer}>
+//               {correctAlbum.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
+//           </div>
+//         </div>
+//       );
+//     }
+//     return (
+//       <div>
+//         <Toolbar className={styles.albumToolbar}>
+//           <ToolbarGroup>
+//             <ToolbarTitle text="Albums" />
+//           </ToolbarGroup>
+//           <ToolbarGroup>
+//             <ToolbarTitle text="Sort:" />
+//             <Link>
+//               <FlatButton label="Newest" onClick={sortByNew.bind(this)} />
+//             </Link>
+//             {/* <Link to={`/posts/${popular}`} key={popular}> */}
+//             <Link>
+//               <FlatButton label="Popular" onClick={sortByPop.bind(this)} />
+//             </Link>
+//           </ToolbarGroup>
+//         </Toolbar>
+//         <div className={styles.albumListContainer}>
+//             {albums.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
+//         </div>
+//       </div>
+//     );
+//   }
+// }
