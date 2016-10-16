@@ -74,7 +74,7 @@ const defaultAlbums = [{
   albumId: 2,
   title: 'Jazz Jamaica',
   description: 'Jamaican Jazz Guitar',
-  link: '',
+  link: 'https://www.youtube.com/watch?v=KFwQithLUok&list=PLDnvLPkzDsWxCV2SpzEiloi7Fprj_a_0u',
 }, {
   id: 3,
   author: 'Sam & Dave',
@@ -84,7 +84,7 @@ const defaultAlbums = [{
   albumId: 3,
   title: 'Soul Men',
   description: '1967 R&B soul duo',
-  link: '',
+  link: 'https://www.youtube.com/watch?v=ZVx2i6jGzf8',
 }, {
   id: 4,
   author: 'Solange',
@@ -94,7 +94,7 @@ const defaultAlbums = [{
   albumId: 4,
   title: 'A Seat At The Table',
   description: 'American Singer Songwriter',
-  link: '',
+  link: 'https://www.youtube.com/watch?v=ZltxY1iIyPs',
 }, {
   id: 5,
   author: 'Rev. Gary Davis',
@@ -104,7 +104,7 @@ const defaultAlbums = [{
   albumId: 5,
   title: 'Harlem Street Singer',
   description: '1960\'s fingerstyle guitar',
-  link: '',
+  link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
 }, {
   id: 6,
   author: 'Henry Thomas',
@@ -114,7 +114,7 @@ const defaultAlbums = [{
   albumId: 6,
   title: 'Texas Worried Blues',
   description: 'Pre War Country Blues',
-  link: '',
+  link: 'https://www.youtube.com/watch?v=aSBkcBpLnzY',
 }, {
   id: 7,
   author: 'Elizabeth Cotton',
@@ -124,7 +124,7 @@ const defaultAlbums = [{
   albumId: 7,
   title: 'Shake Sugaree',
   description: '1960\'s fingerstyle guitar',
-  link: '',
+  link: 'https://www.youtube.com/watch?v=MjCmp1gt5o8',
 },
 
 ];
