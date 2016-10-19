@@ -8,7 +8,7 @@ import SiteIcon from 'material-ui/svg-icons/av/library-music';
 // import data from '../../data.js';
 import { connect } from 'react-redux';
 // was lessons
-class AlbumCollection extends PureComponent {
+class Artists extends PureComponent {
   render() {
     return (
       <Drawer>
@@ -31,7 +31,7 @@ const mapStateToProps = state => ({
   genres: state.genres,
 });
 
-export default connect(mapStateToProps)(AlbumCollection);
+export default connect(mapStateToProps)(Artists);
 
 // const Categories = () => (
 //   <Drawer>

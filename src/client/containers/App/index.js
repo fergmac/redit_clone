@@ -1,11 +1,11 @@
 import React from 'react';
-import AlbumCollection from '../../components/AlbumCollection';
+import Artists from '../../components/Artists';
 import styles from './styles.css';
 
 
 const App = (props) => (
   <div>
-    <AlbumCollection />
+    <Artists />
     <div className={styles.viewContainer}>
       {props.children}
     </div>
@@ -17,4 +17,3 @@ App.propTypes = {
 };
 
 export default App;
-
