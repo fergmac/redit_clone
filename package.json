@@ -12,7 +12,7 @@
     "url": " https://github.com/redacademy/adp-react.git"
   },
   "scripts": {
-    "start": "webpack-validator .webpack/webpack.dev.client.config.js && concurrently 'npm run watch' 'cross-env NODE_ENV=development node --harmony server' 'npm run browsersync'",
+    "start": "webpack-validator .webpack/webpack.dev.client.config.js && concurrently 'npm run watch' 'cross-env NODE_ENV=development nodemon --debug --inspect --harmony server' 'npm run browsersync'",
     "browsersync": "browser-sync start --config .webpack/browsersync.js",
     "watch": "webpack --watch --config '.webpack/webpack.dev.client.config.js'",
     "server": "node server/index.js"
