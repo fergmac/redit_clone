@@ -5,6 +5,7 @@ const SORT_BY_POPULARITY = 'SORT_BY_POPULARITY';
 const SORT_BY_NEWEST = 'SORT_BY_NEWEST';
 const LOAD_ALBUMS = 'LOAD_ALBUMS';
 const STATE_UPDATE = 'STATE_UPDATE';
+const CREATE_ALBUM = 'CREATE_ALBUM';
 
 // sort votes function
 const sortByKey = (key, order = 1) => (a, b) => {
@@ -29,10 +30,17 @@ const sortByKey = (key, order = 1) => (a, b) => {
 //   }
 // };
 
+
 // action creators
-const loadAlbums = (albumId) => ({
+const createAlbum = (newAlbum) => ({
+  type: CREATE_ALBUM,
+  payload: { newAlbum },
+  meta: { remote: true },
+});
+const loadAlbums = (albums) => ({
   type: LOAD_ALBUMS,
-  payload: { albumId },
+  payload: { albums },
+  meta: { remote: true },
 });
 exports.loadAlbums = loadAlbums;
 
@@ -54,87 +62,105 @@ const sortByNewest = () => ({
 });
 exports.sortByNewest = sortByNewest;
 
+const saveAlbum = (newAlbum) => (dispatch) => fetch('/albums/new', {
+  method: 'POST',
+  headers: new Headers({
+    'Content-Type': 'application/json',
+  }),
+  body: JSON.stringify(newAlbum),
+}).then((savedAlbum) => {
+  dispatch(createAlbum(savedAlbum));
+});
+exports.saveAlbum = saveAlbum;
 
-const defaultAlbums = [{
-  id: 1,
-  author: 'Eddie Lang',
-  voters: new Set(),
-  votes: 1,
-  date: new Date('2016-01-01'),
-  albumId: 1,
-  title: 'Pioneer of Jazz Guitar',
-  description: '1927-1939 acoustic jazz guitar',
-  link: 'https://www.youtube.com/watch?v=K1Kw8L6rYt0',
-}, {
-  id: 2,
-  author: 'Ernest Ranglin',
-  voters: new Set(),
-  votes: 1,
-  date: new Date('2016-01-02'),
-  albumId: 2,
-  title: 'Jazz Jamaica',
-  description: 'Jamaican Jazz Guitar',
-  link: 'https://www.youtube.com/watch?v=KFwQithLUok&list=PLDnvLPkzDsWxCV2SpzEiloi7Fprj_a_0u',
-}, {
-  id: 3,
-  author: 'Sam & Dave',
-  voters: new Set(),
-  votes: 1,
-  date: new Date('2016-01-03'),
-  albumId: 3,
-  title: 'Soul Men',
-  description: '1967 R&B soul duo',
-  link: 'https://www.youtube.com/watch?v=ZVx2i6jGzf8',
-}, {
-  id: 4,
-  author: 'Solange',
-  voters: new Set(),
-  votes: 1,
-  date: new Date('2016-01-05'),
-  albumId: 4,
-  title: 'A Seat At The Table',
-  description: 'American Singer Songwriter',
-  link: 'https://www.youtube.com/watch?v=ZltxY1iIyPs',
-}, {
-  id: 5,
-  author: 'Rev. Gary Davis',
-  voters: new Set(),
-  votes: 6,
-  date: new Date('2016-01-06'),
-  albumId: 5,
-  title: 'Harlem Street Singer',
-  description: '1960\'s fingerstyle guitar',
-  link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
-}, {
-  id: 6,
-  author: 'Henry Thomas',
-  voters: new Set(),
-  votes: 6,
-  date: new Date('2016-01-07'),
-  albumId: 6,
-  title: 'Texas Worried Blues',
-  description: 'Pre War Country Blues',
-  link: 'https://www.youtube.com/watch?v=aSBkcBpLnzY',
-}, {
-  id: 7,
-  author: 'Elizabeth Cotton',
-  voters: new Set(),
-  votes: 1,
-  date: new Date('2016-01-08'),
-  albumId: 7,
-  title: 'Shake Sugaree',
-  description: '1960\'s fingerstyle guitar',
-  link: 'https://www.youtube.com/watch?v=MjCmp1gt5o8',
-},
+const fetchAlbums = () => (dispatch) => fetch('/albums').then((albums) => {
+  albums.json().then(theAlbums => dispatch(loadAlbums(theAlbums)));
+});
+exports.fetchAlbums = fetchAlbums;
 
-];
+// const defaultAlbums = [{
+//   id: 1,
+//   author: 'Eddie Lang',
+//   voters: new Set(),
+//   votes: 1,
+//   date: new Date('2016-01-01'),
+//   albumId: 1,
+//   title: 'Pioneer of Jazz Guitar',
+//   description: '1927-1939 acoustic jazz guitar',
+//   link: 'https://www.youtube.com/watch?v=K1Kw8L6rYt0',
+// }, {
+//   id: 2,
+//   author: 'Ernest Ranglin',
+//   voters: new Set(),
+//   votes: 1,
+//   date: new Date('2016-01-02'),
+//   albumId: 2,
+//   title: 'Jazz Jamaica',
+//   description: 'Jamaican Jazz Guitar',
+//   link: 'https://www.youtube.com/watch?v=KFwQithLUok&list=PLDnvLPkzDsWxCV2SpzEiloi7Fprj_a_0u',
+// }, {
+//   id: 3,
+//   author: 'Sam & Dave',
+//   voters: new Set(),
+//   votes: 1,
+//   date: new Date('2016-01-03'),
+//   albumId: 3,
+//   title: 'Soul Men',
+//   description: '1967 R&B soul duo',
+//   link: 'https://www.youtube.com/watch?v=ZVx2i6jGzf8',
+// }, {
+//   id: 4,
+//   author: 'Solange',
+//   voters: new Set(),
+//   votes: 1,
+//   date: new Date('2016-01-05'),
+//   albumId: 4,
+//   title: 'A Seat At The Table',
+//   description: 'American Singer Songwriter',
+//   link: 'https://www.youtube.com/watch?v=ZltxY1iIyPs',
+// }, {
+//   id: 5,
+//   author: 'Rev. Gary Davis',
+//   voters: new Set(),
+//   votes: 6,
+//   date: new Date('2016-01-06'),
+//   albumId: 5,
+//   title: 'Harlem Street Singer',
+//   description: '1960\'s fingerstyle guitar',
+//   link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
+// }, {
+//   id: 6,
+//   author: 'Henry Thomas',
+//   voters: new Set(),
+//   votes: 6,
+//   date: new Date('2016-01-07'),
+//   albumId: 6,
+//   title: 'Texas Worried Blues',
+//   description: 'Pre War Country Blues',
+//   link: 'https://www.youtube.com/watch?v=aSBkcBpLnzY',
+// }, {
+//   id: 7,
+//   author: 'Elizabeth Cotton',
+//   voters: new Set(),
+//   votes: 1,
+//   date: new Date('2016-01-08'),
+//   albumId: 7,
+//   title: 'Shake Sugaree',
+//   description: '1960\'s fingerstyle guitar',
+//   link: 'https://www.youtube.com/watch?v=MjCmp1gt5o8',
+// },
 
-
+// ];
+/* eslint-disable */
 // all changes to Post and Week data here
-const reducer = (albums = defaultAlbums, action) => {
+const reducer = (albums = [], action) => {
   switch (action.type) {
-    // case LOAD_POSTS:
-    //   return posts.filter((post) => parseInt(action.payload.lessonId, 10) === post.id);
+    case CREATE_ALBUM:
+      return albums.concat(action.payload.newAlbum);
+    case LOAD_ALBUMS:
+      const output = albums.concat(action.payload.albums);
+      return output;
+      // return action.payload.albums.filter((album) => parseInt(action.payload.artistId, 10) === album.id);
     case VOTE_UP:
       return albums.map((album) => {
         if (action.payload.id === album.id) {
