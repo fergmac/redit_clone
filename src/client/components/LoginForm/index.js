@@ -9,7 +9,7 @@ class LoginForm extends PureComponent {
     return (
       <div className={styles.loginFormPage}>
         <h1>LoginForm</h1>
-        <form onSubmit={handleSubmit((fields) => console.log(fields))}>
+        <form onSubmit={handleSubmit}>
           <Field
             name="email"
             component="input"
