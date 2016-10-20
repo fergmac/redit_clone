@@ -165,7 +165,7 @@ const reducer = (albums = [], action) => {
       return albums.map((album) => {
         if (action.payload.id === album.id) {
           // post.votes += 1;
-          album.voters.add(action.clientId); // do in DB
+          album.voters.add(action.payload.clientId); // do in DB
           album.votes = album.voters.size;
         }
         return album;
