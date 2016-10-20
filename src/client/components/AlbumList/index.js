@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import styles from './style.css';
 import Album from '../Album';
 import { connect } from 'react-redux';
-import { voteUp, sortByPopularity, sortByNewest, loadAlbums } from '../../../shared/redux/modules/albums';
+import { voteUp, sortByPopularity, sortByNewest, fetchAlbums } from '../../../shared/redux/modules/albums';
 import FlatButton from 'material-ui/FlatButton';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 import { Link } from 'react-router';
@@ -51,10 +51,12 @@ class AlbumList extends PureComponent {
   //   );
   // }
 
-  // componentDidUpdate() {
-  //   // this.props.sortByPopularity();
-  //   // this.props.sortByNewest();
-  // }
+  componentDidMount() {
+    // this.props.sortByPopularity();
+    // this.props.sortByNewest();
+    // this.props.loadAlbums();
+    this.props.fetchAlbums();
+  }
   render() {
     // const sortOrder = this.props.location.query.sort;
     // variable so i don't have to write this.props in front
@@ -127,8 +129,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  loadAlbums: (albumId) => {
-    dispatch(loadAlbums(albumId));
+  fetchAlbums: () => {
+    dispatch(fetchAlbums());
   },
   voteUps: (id) => {
     dispatch(voteUp(id));
