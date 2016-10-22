@@ -13,6 +13,7 @@ socket.on('clientId', (id) => {
   }
 });
 socket.on('state', payload => {
+  console.log('state update', payload);
   store.dispatch({
     type: 'STATE_UPDATE',
     payload,

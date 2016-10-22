@@ -24,21 +24,25 @@ class AddAlbum extends PureComponent {
             name="title"
             component="input"
             type="text"
+            placeholder="Title"
           />
           <Field
             name="description"
             component="input"
             type="text"
+            placeholder="Description"
           />
           <Field
-            name="linke"
+            name="link"
             component="input"
             type="text"
+            placeholder="Link"
           />
           <Field
-            name="date"
+            name="tags"
             component="input"
             type="text"
+            placeholder="Tags"
           />
           <button type="submit">Submit</button>
         </form>

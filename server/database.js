@@ -2,17 +2,6 @@ const Sequelize = require('sequelize');
 const bcrypt = require('bcrypt');
 const config = require('./configs');
 
-
-// const db = new Sequelize('redit3', 'fergusmacconnell', 'postgres', {
-//   dialect: 'postgres',
-//   host: 'localhost',
-//   pool: {
-//     max: 5,
-//     min: 1,
-//     idle: 10000,
-//   },
-// });
-
 const db = new Sequelize(
     config.get('POSTGRES_DB'),
     config.get('POSTGRES_USER'),
@@ -26,18 +15,14 @@ const db = new Sequelize(
       idle: 10000,
     },
   });
-
-
+const Genre = db.define('genres', {
+  title: { type: Sequelize.String },
+});
 const Album = db.define('albums', {
   title: { type: Sequelize.STRING },
   description: { type: Sequelize.STRING },
   link: { type: Sequelize.TEXT },
 });
-
-// const User = db.define('users', {
-//   email: { type: Sequelize.STRING },
-//   password: { type: Sequelize.PASSWORD },
-// });
 
 const User = db.define('user', {
   email: {
@@ -64,6 +49,15 @@ const User = db.define('user', {
 db.sync({
   force: true,
 }).then(() => {
+  Genre.create({
+    title: 'Jazz',
+  });
+  Genre.create({
+    title: 'R&B',
+  });
+  Genre.create({
+    title: 'Blues',
+  });
   User.create({
     email: 'f.macconnell@gmail.com',
     password: 'password',
@@ -106,6 +100,7 @@ db.sync({
 });
 
 module.exports = {
+  Genre,
   Album,
   User,
 };

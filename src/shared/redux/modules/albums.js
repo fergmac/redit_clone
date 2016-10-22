@@ -6,6 +6,7 @@ const SORT_BY_NEWEST = 'SORT_BY_NEWEST';
 const LOAD_ALBUMS = 'LOAD_ALBUMS';
 const STATE_UPDATE = 'STATE_UPDATE';
 const CREATE_ALBUM = 'CREATE_ALBUM';
+// const CREATE_USER = 'CREATE_USER';
 
 // sort votes function
 const sortByKey = (key, order = 1) => (a, b) => {
@@ -77,6 +78,16 @@ const fetchAlbums = () => (dispatch) => fetch('/albums').then((albums) => {
   albums.json().then(theAlbums => dispatch(loadAlbums(theAlbums)));
 });
 exports.fetchAlbums = fetchAlbums;
+
+// const savedUser = (newUser) => (dispatch) =>  fetch('/login', {
+//   method: 'POST',
+//   headers: new Headers({
+//     'Content-Type': 'application/json',
+//   }),
+//   body: JSON.stringify(newAlbum),
+// }).then((savedUser) => {
+//   dispatch(createUser(savedUser));
+// });
 
 // const defaultAlbums = [{
 //   id: 1,
