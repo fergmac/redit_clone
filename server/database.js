@@ -18,6 +18,9 @@ const db = new Sequelize(
 const Genre = db.define('genres', {
   title: { type: Sequelize.String },
 });
+const Artist = db.define('artists', {
+  name: { type: Sequelize.String },
+});
 const Album = db.define('albums', {
   title: { type: Sequelize.STRING },
   description: { type: Sequelize.STRING },
@@ -57,6 +60,27 @@ db.sync({
   });
   Genre.create({
     title: 'Blues',
+  });
+  Artist.create({
+    name: 'Eddie Lang',
+  });
+  Artist.create({
+    name: 'Ernest Ranglin',
+  });
+  Artist.create({
+    name: 'Sam & Dave',
+  });
+  Artist.create({
+    name: 'Solange',
+  });
+  Artist.create({
+    name: 'Rev. Gary Davis',
+  });
+  Artist.create({
+    name: 'Henry Thomas',
+  });
+  Artist.create({
+    name: 'Elizabeth Cotten',
   });
   User.create({
     email: 'f.macconnell@gmail.com',
@@ -101,6 +125,7 @@ db.sync({
 
 module.exports = {
   Genre,
+  Artist,
   Album,
   User,
 };
