@@ -1,15 +1,32 @@
 const Sequelize = require('sequelize');
+const bcrypt = require('bcrypt');
+const config = require('./configs');
 
 
-const db = new Sequelize('redit3', 'fergusmacconnell', 'postgres', {
-  dialect: 'postgres',
-  host: 'localhost',
-  pool: {
-    max: 5,
-    min: 1,
-    idle: 10000,
-  },
-});
+// const db = new Sequelize('redit3', 'fergusmacconnell', 'postgres', {
+//   dialect: 'postgres',
+//   host: 'localhost',
+//   pool: {
+//     max: 5,
+//     min: 1,
+//     idle: 10000,
+//   },
+// });
+
+const db = new Sequelize(
+    config.get('POSTGRES_DB'),
+    config.get('POSTGRES_USER'),
+    config.get('POSTGRES_PASSWORD'),
+  {
+    dialect: 'postgres',
+    host: 'localhost',
+    pool: {
+      max: 5,
+      min: 1,
+      idle: 10000,
+    },
+  });
+
 
 const Album = db.define('albums', {
   title: { type: Sequelize.STRING },
@@ -17,9 +34,40 @@ const Album = db.define('albums', {
   link: { type: Sequelize.TEXT },
 });
 
+// const User = db.define('users', {
+//   email: { type: Sequelize.STRING },
+//   password: { type: Sequelize.PASSWORD },
+// });
+
+const User = db.define('user', {
+  email: {
+    type: Sequelize.STRING,
+    unique: true,
+    validate: { isEmail: true } },
+  password: {
+    type: Sequelize.TEXT,
+    set(password) {
+      const salt = bcrypt.genSaltSync(8);
+      const hash = bcrypt.hashSync(password, salt);
+      this.setDataValue('password', hash);
+    },
+  },
+},
+  {
+    instanceMethods: {
+      verifyPassword(password) {
+        return bcrypt.compareSync(password, this.password);
+      },
+    },
+  });
+
 db.sync({
   force: true,
 }).then(() => {
+  User.create({
+    email: 'f.macconnell@gmail.com',
+    password: 'password',
+  });
   Album.create({
     title: 'Pioneer of Jazz Guitar',
     description: '1927-1939 acoustic jazz guitar',
@@ -59,4 +107,5 @@ db.sync({
 
 module.exports = {
   Album,
+  User,
 };
