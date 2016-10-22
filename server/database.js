@@ -26,6 +26,9 @@ const Album = db.define('albums', {
   description: { type: Sequelize.STRING },
   link: { type: Sequelize.TEXT },
 });
+const Tag = db.define('tag', {
+  title: { type: Sequelize.String },
+});
 
 const User = db.define('user', {
   email: {
@@ -48,6 +51,19 @@ const User = db.define('user', {
       },
     },
   });
+// one to many relationships
+Genre.hasMany(Album);
+User.hasMany(Album);
+
+// many to many relationships
+Album.belongsToMany(Tag, { through: 'albumtags' });
+Tag.belongsToMany(Album, { through: 'albumtags' });
+
+Artist.belongsToMany(Genre);
+Genre.belongsToMany(Artist);
+
+User.belongsToMany(Album, { through: 'votes' });
+Album.bleongsToMany(User, { through: 'votes' });
 
 db.sync({
   force: true,
