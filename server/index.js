@@ -6,6 +6,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+
 const production = process.env.NODE_ENV === 'production';
 const port = production ? 8080 : 8181;
 const middleware = require('./middleware')(app);
@@ -23,6 +24,7 @@ app.use(express.static(resolve(process.cwd(), '.build')));
 app.use(cors());
 
 require('./api-routes/albums.js')(router);
+require('./api-routes/auths.js')(router);
 app.use(router);
 
 
