@@ -28,7 +28,6 @@ require('./api-routes/auths.js')(router);
 app.use(router);
 
 
-
 app.get('*', (req, res) => {
   fs.readFile(resolve(process.cwd(), '.build/index.html'), (err, file) => {
     if (err) {

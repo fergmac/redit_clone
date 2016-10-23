@@ -16,10 +16,10 @@ const db = new Sequelize(
     },
   });
 const Genre = db.define('genres', {
-  title: { type: Sequelize.String },
+  title: { type: Sequelize.STRING },
 });
 const Artist = db.define('artists', {
-  name: { type: Sequelize.String },
+  name: { type: Sequelize.STRING },
 });
 const Album = db.define('albums', {
   title: { type: Sequelize.STRING },
@@ -27,7 +27,7 @@ const Album = db.define('albums', {
   link: { type: Sequelize.TEXT },
 });
 const Tag = db.define('tag', {
-  title: { type: Sequelize.String },
+  title: { type: Sequelize.STRING },
 });
 
 const User = db.define('user', {
@@ -54,16 +54,17 @@ const User = db.define('user', {
 // one to many relationships
 Genre.hasMany(Album);
 User.hasMany(Album);
+Genre.hasMany(Artist);
 
 // many to many relationships
 Album.belongsToMany(Tag, { through: 'albumtags' });
 Tag.belongsToMany(Album, { through: 'albumtags' });
 
-Artist.belongsToMany(Genre);
-Genre.belongsToMany(Artist);
+// Artist.belongsToMany(Genre);
+// Genre.belongsToMany(Artist);
 
 User.belongsToMany(Album, { through: 'votes' });
-Album.bleongsToMany(User, { through: 'votes' });
+Album.belongsToMany(User, { through: 'votes' });
 
 db.sync({
   force: true,
