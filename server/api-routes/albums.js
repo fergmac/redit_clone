@@ -2,9 +2,11 @@ const { Album } = require('../database.js');
 
 function ApiRoutes(router) {
   router.post('/albums/new', (req, res) => {
-    const { title, description, link } = req.body;
+    const { title, artist, genre, description, link } = req.body;
     Album.create({
       title,
+      artist,
+      genre,
       description,
       link,
     }).then((album) => {

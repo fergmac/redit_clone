@@ -3,6 +3,7 @@ import styles from './style.css';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { saveAlbum } from '../../../shared/redux/modules/albums';
+import Card from 'material-ui/Card';
 // was create post
 
 class AddAlbum extends PureComponent {
@@ -18,34 +19,48 @@ class AddAlbum extends PureComponent {
     const { handleSubmit } = this.props;
     return (
       <div className={styles.addAlbum}>
-        <h1>Add Album Page</h1>
-        <form onSubmit={handleSubmit}>
-          <Field
-            name="title"
-            component="input"
-            type="text"
-            placeholder="Title"
-          />
-          <Field
-            name="description"
-            component="input"
-            type="text"
-            placeholder="Description"
-          />
-          <Field
-            name="link"
-            component="input"
-            type="text"
-            placeholder="Link"
-          />
-          <Field
-            name="tags"
-            component="input"
-            type="text"
-            placeholder="Tags"
-          />
-          <button type="submit">Submit</button>
-        </form>
+        <Card className={styles.addAlbumCard}>
+          <h3>Add Album Page</h3>
+          <form onSubmit={handleSubmit}>
+            <Field
+              name="title"
+              component="input"
+              type="text"
+              placeholder="Title"
+            />
+            <Field
+              name="artist"
+              component="input"
+              type="text"
+              placeholder="Artist"
+            />
+            <Field
+              name="genre"
+              component="input"
+              type="text"
+              placeholder="Genre"
+            />
+            <Field
+              name="description"
+              component="input"
+              type="text"
+              placeholder="Description"
+            />
+            <Field
+              name="link"
+              component="input"
+              type="text"
+              placeholder="Link"
+            />
+            <Field
+              name="tags"
+              component="input"
+              type="text"
+              placeholder="Tags"
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </Card>
       </div>
       );
   }

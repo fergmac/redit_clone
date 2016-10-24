@@ -23,6 +23,8 @@ const Artist = db.define('artists', {
 });
 const Album = db.define('albums', {
   title: { type: Sequelize.STRING },
+  artist: { type: Sequelize.STRING },
+  genre: { type: Sequelize.STRING },
   description: { type: Sequelize.STRING },
   link: { type: Sequelize.TEXT },
 });
