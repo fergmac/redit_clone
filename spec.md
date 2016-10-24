@@ -20,7 +20,7 @@ Your project must:
 - [X] Be pushed to Github 
 - [X] Use [descriptive Git commits](http://chris.beams.io/posts/git-commit/)
 - [X] Use small, single purpose Git commits
-- [ ] Contain `README.md` with project summary and setup
+- [X] Contain `README.md` with project summary and setup
 - [X] Contain a valid [`package.json`](http://browsenpm.org/package.json) file with all appropriate fields completed
 - [X] Contain `.gitignore` file (ignoring `node_modules` and system files)
 - [X] Contain this self-evaluated spec checklist renamed `specs.md`
@@ -34,10 +34,10 @@ Your project must:
 
 - [X] Load mock data as "posts" and "weeks"
 - [X] Display posts in a list
-- [ ] Allow post sorting (by "newest" or "popularity")
-- [ ] Allow post filtering (by post list)
+- [X] Allow post sorting (by "newest" or "popularity")
+- [X] Allow post filtering (by post list)
 - [X] Allow users to up-vote posts
-- [ ] Use routing to change the URL when the user sorts or filters
+- [X] Use routing to change the URL when the user sorts or filters
 
 ### Development
 
@@ -103,10 +103,10 @@ Your project must include a server (Node/Express), a connected database (Postgre
 
 Your project must:
 
-- [ ] Be pushed to Github 
+- [X] Be pushed to Github 
 - [X] Use [descriptive Git commits](http://chris.beams.io/posts/git-commit/)
 - [X] Use small, single purpose Git commits
-- [ ] Contain `README.md` with project summary and setup
+- [X] Contain `README.md` with project summary and setup
 - [X] Contain a valid [`package.json`](http://browsenpm.org/package.json) file with all appropriate fields completed
 - [X] Contain `.gitignore` file (ignoring `node_modules` and system files)
 - [X] Contain this self-evaluated spec checklist renamed `specs.md`
@@ -134,8 +134,8 @@ Your project must:
 Your project must:
 
 - [ ] Implement form validation (client-side)
-- [ ] Use JSON Web Tokens (client-side)
-- [ ] Use ES2015 Promises when communicating between client and server (server-side)
+- [X] Use JSON Web Tokens (client-side)
+- [X] Use ES2015 Promises when communicating between client and server (server-side)
 - [ ] Use Passport to authenticate user logins and passwords (server-side)
 - [ ] Sanitize data (server-side)
 - [ ] Implement data validation using schema (server-side)
