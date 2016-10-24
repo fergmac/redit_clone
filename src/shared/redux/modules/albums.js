@@ -79,88 +79,6 @@ const fetchAlbums = () => (dispatch) => fetch('/albums').then((albums) => {
 });
 exports.fetchAlbums = fetchAlbums;
 
-// const savedUser = (newUser) => (dispatch) =>  fetch('/login', {
-//   method: 'POST',
-//   headers: new Headers({
-//     'Content-Type': 'application/json',
-//   }),
-//   body: JSON.stringify(newAlbum),
-// }).then((savedUser) => {
-//   dispatch(createUser(savedUser));
-// });
-
-// const defaultAlbums = [{
-//   id: 1,
-//   author: 'Eddie Lang',
-//   voters: new Set(),
-//   votes: 1,
-//   date: new Date('2016-01-01'),
-//   albumId: 1,
-//   title: 'Pioneer of Jazz Guitar',
-//   description: '1927-1939 acoustic jazz guitar',
-//   link: 'https://www.youtube.com/watch?v=K1Kw8L6rYt0',
-// }, {
-//   id: 2,
-//   author: 'Ernest Ranglin',
-//   voters: new Set(),
-//   votes: 1,
-//   date: new Date('2016-01-02'),
-//   albumId: 2,
-//   title: 'Jazz Jamaica',
-//   description: 'Jamaican Jazz Guitar',
-//   link: 'https://www.youtube.com/watch?v=KFwQithLUok&list=PLDnvLPkzDsWxCV2SpzEiloi7Fprj_a_0u',
-// }, {
-//   id: 3,
-//   author: 'Sam & Dave',
-//   voters: new Set(),
-//   votes: 1,
-//   date: new Date('2016-01-03'),
-//   albumId: 3,
-//   title: 'Soul Men',
-//   description: '1967 R&B soul duo',
-//   link: 'https://www.youtube.com/watch?v=ZVx2i6jGzf8',
-// }, {
-//   id: 4,
-//   author: 'Solange',
-//   voters: new Set(),
-//   votes: 1,
-//   date: new Date('2016-01-05'),
-//   albumId: 4,
-//   title: 'A Seat At The Table',
-//   description: 'American Singer Songwriter',
-//   link: 'https://www.youtube.com/watch?v=ZltxY1iIyPs',
-// }, {
-//   id: 5,
-//   author: 'Rev. Gary Davis',
-//   voters: new Set(),
-//   votes: 6,
-//   date: new Date('2016-01-06'),
-//   albumId: 5,
-//   title: 'Harlem Street Singer',
-//   description: '1960\'s fingerstyle guitar',
-//   link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
-// }, {
-//   id: 6,
-//   author: 'Henry Thomas',
-//   voters: new Set(),
-//   votes: 6,
-//   date: new Date('2016-01-07'),
-//   albumId: 6,
-//   title: 'Texas Worried Blues',
-//   description: 'Pre War Country Blues',
-//   link: 'https://www.youtube.com/watch?v=aSBkcBpLnzY',
-// }, {
-//   id: 7,
-//   author: 'Elizabeth Cotton',
-//   voters: new Set(),
-//   votes: 1,
-//   date: new Date('2016-01-08'),
-//   albumId: 7,
-//   title: 'Shake Sugaree',
-//   description: '1960\'s fingerstyle guitar',
-//   link: 'https://www.youtube.com/watch?v=MjCmp1gt5o8',
-// },
-
 // ];
 /* eslint-disable */
 // all changes to Post and Week data here
@@ -176,7 +94,7 @@ const reducer = (albums = [], action) => {
       return albums.map((album) => {
         if (action.payload.id === album.id) {
           // post.votes += 1;
-          album.voters.add(action.payload.clientId); // do in DB
+          album.voters.add(payload.clientId); // do in DB
           album.votes = album.voters.size;
         }
         return album;
