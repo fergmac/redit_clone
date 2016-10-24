@@ -1,34 +1,61 @@
 import React, { PureComponent } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import styles from './style.css';
+import { connect } from 'react-redux';
+import { saveUser } from '../../../shared/redux/modules/users';
+
+const validate = values => {
+  const errors = {};
+  const requiredFields = ['email', 'password'];
+  requiredFields.forEach(field => {
+    if (!values[field]) {
+      errors[field] = 'Required';
+    }
+  });
+  if (values.email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address';
+  }
+  return errors;
+};
 
 class LoginForm extends PureComponent {
+  componentDidMount() {
+    this.props.saveUser({
+      email: 'f.macconnell@gmail.com',
+      password: 'password',
+    });
+  }
   render() {
-    const { handleSubmit } = this.props;
-    console.log(this.props);
+    const { handleSubmit, pristine, reset, submitting } = this.props;
     return (
       <div className={styles.loginFormPage}>
         <h1>LoginForm</h1>
         <form onSubmit={handleSubmit}>
-          <Field
-            name="email"
-            component="input"
-            type="text"
-          />
-          <Field
-            name="password"
-            component="input"
-            type="password"
-          />
-          <button type="submit">Submit</button>
+          <Field name="email" component="input" type="text" placeholder="email" />
+          <Field name="password" component="input" type="password" placeholder="password" />
+          <div className={styles.loginButtons}>
+            <button type="submit" disabled={pristine || submitting}>Login</button>
+            <button type="submit" disabled={pristine || submitting} onClick={reset}>Sign Up</button>
+          </div>
         </form>
-
       </div>
     );
   }
 }
 
-export default reduxForm({
+const mapStateToProps = state => ({
+  users: state.users,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  saveUser: (newUser) => {
+    dispatch(saveUser(newUser));
+  },
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
   form: 'login',
-})(LoginForm);
+  validate,
+})(LoginForm));
 
