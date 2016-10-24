@@ -115,27 +115,27 @@ db.sync({
   });
   Album.create({
     title: 'Soul Men',
-    subscription: '1967 R&B soul duo',
+    description: '1967 R&B soul duo',
     link: 'https://www.youtube.com/watch?v=ZVx2i6jGzf8',
   });
   Album.create({
     title: 'A Seat At The Table',
-    subscription: 'American Singer Songwriter',
+    description: 'American Singer Songwriter',
     link: 'https://www.youtube.com/watch?v=ZltxY1iIyPs',
   });
   Album.create({
     title: 'Harlem Street Singer',
-    subscription: '1960\'s fingerstyle guitar',
+    desscription: '1960\'s fingerstyle guitar',
     link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
   });
   Album.create({
     title: 'Texas Worried Blues',
-    subscription: 'Pre War Country Blues',
+    description: 'Pre War Country Blues',
     link: 'https://www.youtube.com/watch?v=aSBkcBpLnzY',
   });
   Album.create({
     title: 'Shake Sugaree',
-    subscription: '1960\'s fingerstyle guitar',
+    description: '1960\'s fingerstyle guitar',
     link: 'https://www.youtube.com/watch?v=MjCmp1gt5o8',
   });
 });
