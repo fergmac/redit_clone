@@ -25,6 +25,8 @@ app.use(cors());
 
 require('./api-routes/albums.js')(router);
 require('./api-routes/auths.js')(router);
+require('./api-routes/genres.js')(router);
+require('./api-routes/artists.js')(router);
 app.use(router);
 
 
