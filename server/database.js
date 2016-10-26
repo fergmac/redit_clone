@@ -127,7 +127,7 @@ db.sync({
   });
   Album.create({
     title: 'Harlem Street Singer',
-    desscription: '1960\'s fingerstyle guitar',
+    description: '1960\'s fingerstyle guitar',
     link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
   });
   Album.create({
