@@ -53,6 +53,10 @@ const User = db.define('user', {
       },
     },
   });
+
+// const ArtistGenre = db.define('artistgenre', {});
+
+const Votes = db.define('votes', {});
 // one to many relationships
 Genre.hasMany(Album);
 User.hasMany(Album);
@@ -155,6 +159,60 @@ db.sync({
     link: 'https://www.youtube.com/watch?v=MjCmp1gt5o8',
   });
 });
+Votes.bulkCreate([
+  {
+    albumId: 1,
+    userId: 1,
+  },
+  {
+    albumId: 1,
+    userId: 3,
+  },
+  {
+    albumId: 2,
+    userId: 1,
+  },
+  {
+    albumId: 2,
+    userId: 3,
+  },
+  {
+    albumId: 2,
+    userId: 4,
+  },
+  {
+    albumId: 2,
+    userId: 2,
+  },
+  {
+    albumId: 3,
+    userId: 1,
+  },
+  {
+    albumId: 3,
+    userId: 2,
+  },
+  {
+    albumId: 3,
+    userId: 3,
+  },
+  {
+    albumId: 3,
+    userId: 4,
+  },
+  {
+    albumId: 3,
+    userId: 5,
+  },
+  {
+    albumId: 3,
+    userId: 6,
+  },
+  {
+    albumId: 3,
+    userId: 7,
+  },
+]);
 
 module.exports = {
   Genre,
