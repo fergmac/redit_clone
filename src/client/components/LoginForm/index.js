@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import styles from './style.css';
 import { connect } from 'react-redux';
 import { saveUser } from '../../../shared/redux/modules/users';
+import { TextField } from 'redux-form-material-ui';
 
 const validate = values => {
   const errors = {};
@@ -24,6 +25,10 @@ class LoginForm extends PureComponent {
       email: 'f.macconnell@gmail.com',
       password: 'password',
     });
+    // this.refs.name
+    //   .getRenderedComponent()
+    //   .getRenderedComponent()
+    //   .focus();
   }
   render() {
     const { handleSubmit, pristine, reset, submitting } = this.props;
@@ -31,8 +36,8 @@ class LoginForm extends PureComponent {
       <div className={styles.loginFormPage}>
         <h1>LoginForm</h1>
         <form onSubmit={handleSubmit}>
-          <Field name="email" component="input" type="text" placeholder="email" />
-          <Field name="password" component="input" type="password" placeholder="password" />
+          <Field name="email" component={TextField} type="text" placeholder="email" />
+          <Field name="password" component={TextField} type="password" placeholder="password" />
           <div className={styles.loginButtons}>
             <button type="submit" disabled={pristine || submitting}>Login</button>
             <button type="submit" disabled={pristine || submitting} onClick={reset}>Sign Up</button>
@@ -54,8 +59,12 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
+// export default reduxForm({
+//   form: 'login',
+//   validate,
+// })(LoginForm);
+
 export default connect(mapStateToProps, mapDispatchToProps)(reduxForm({
   form: 'login',
   validate,
 })(LoginForm));
-
