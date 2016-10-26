@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import style from './style.css';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
@@ -21,14 +21,19 @@ class Artists extends PureComponent {
             </IconButton>
             }
         />
-          {this.props.genres.map((genre) => (<Genre genre={genre} key={genre.id} />))}
+          {this.props.genres.map((genre, index) => (<Genre genre={genre} key={index} />))}
       </Drawer>
     );
   }
 }
 
+Artists.propTypes = {
+  genres: PropTypes.array.isRequired,
+  artists: PropTypes.array.isRequired,
+};
 const mapStateToProps = state => ({
   genres: state.genres,
+  artists: state.artists,
 });
 
 export default connect(mapStateToProps)(Artists);
