@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import Artists from '../../components/Artists';
 import styles from './styles.css';
+import { connect } from 'react-redux';
+import { fetchGenres } from '../../../shared/redux/modules/genres';
 
+class App extends PureComponent {
 
-const App = (props) => (
-  <div>
-    <Artists />
-    <div className={styles.viewContainer}>
-      {props.children}
-    </div>
-  </div>
-);
+  componentDidMount() {
+    this.props.fetchGenres();
+  }
 
-App.propTypes = {
-  children: React.PropTypes.object,
-};
+  render() {
+    return (
+      <div>
+        <Artists />
+        <div className={styles.viewContainer}>
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+}
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  fetchGenres: () => {
+    dispatch(fetchGenres());
+  },
+});
+
+export default connect(null, mapDispatchToProps)(App);
