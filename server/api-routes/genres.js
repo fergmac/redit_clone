@@ -1,5 +1,5 @@
 const { Genre } = require('../database.js');
-
+const { Artist } = require('../database.js');
 function GenreRoutes(router) {
   // router.post('/genres', (req, res) => {
   //   const { title } = req.body;
@@ -10,7 +10,11 @@ function GenreRoutes(router) {
   //   });
   // });
   router.get('/api/genres', (req, res) => {
-    Genre.findAll().then(genres => res.json(genres));
+    Genre.findAll({
+      include: [{
+        model: Artist,
+      }],
+    }).then(genres => res.json(genres));
   });
   return router;
 }
