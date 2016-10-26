@@ -56,14 +56,14 @@ const User = db.define('user', {
 // one to many relationships
 Genre.hasMany(Album);
 User.hasMany(Album);
-Genre.hasMany(Artist);
+// Genre.hasMany(Artist);
 
 // many to many relationships
 Album.belongsToMany(Tag, { through: 'albumtags' });
 Tag.belongsToMany(Album, { through: 'albumtags' });
 
-// Artist.belongsToMany(Genre);
-// Genre.belongsToMany(Artist);
+Artist.belongsToMany(Genre, { through: 'artistgenre' });
+Genre.belongsToMany(Artist, { through: 'artistgenre' });
 
 User.belongsToMany(Album, { through: 'votes' });
 Album.belongsToMany(User, { through: 'votes' });
@@ -82,24 +82,38 @@ db.sync({
   });
   Artist.create({
     name: 'Eddie Lang',
+  }).then((artist) => {
+    artist.setGenres([1]);
   });
   Artist.create({
     name: 'Ernest Ranglin',
+  }).then((artist) => {
+    artist.setGenres([1]);
   });
   Artist.create({
     name: 'Sam & Dave',
+  }).then((artist) => {
+    artist.setGenres([2, 3]);
   });
   Artist.create({
     name: 'Solange',
+  }).then((artist) => {
+    artist.setGenres([2]);
   });
   Artist.create({
     name: 'Rev. Gary Davis',
+  }).then((artist) => {
+    artist.setGenres([3]);
   });
   Artist.create({
     name: 'Henry Thomas',
+  }).then((artist) => {
+    artist.setGenres([3]);
   });
   Artist.create({
     name: 'Elizabeth Cotten',
+  }).then((artist) => {
+    artist.setGenres([3]);
   });
   User.create({
     email: 'f.macconnell@gmail.com',
