@@ -47,7 +47,7 @@ function AuthRoutes(router) {
     done(null, obj);
   });
 
-  router.post('/login', (req, res, next) => {
+  router.post('/api/login', (req, res, next) => {
     passport.authenticate('local', (err, user) => {
       if (err) return res.sendStatus(500);
       if (!user) {

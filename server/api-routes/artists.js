@@ -9,8 +9,14 @@ function ArtistRoutes(router) {
       res.json(artist);
     });
   });
-  router.get('/', (req, res) => {
-    Artist.findAll().then(artists => res.json(artists));
+  router.get('/api/artists', (req, res) => {
+    Artist.findAll({
+      where: {
+        genreId: {
+          $ne: null,
+        },
+      },
+    }).then(artists => res.json(artists));
   });
   return router;
 }
