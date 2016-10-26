@@ -7,13 +7,14 @@ const saveForm = (form) => ({
 });
 exports.saveForm = saveForm;
 
-const createUser = (user) => ({
+const createUser = (newUser) => ({
   type: CREATE_USER,
-  payload: { user },
+  payload: { newUser },
+  meta: { remote: true },
 });
-exports.saveForm = saveForm;
+exports.createUser = createUser;
 
-const saveUser = (newUser) => (dispatch) => fetch('/login', {
+const saveUser = (newUser) => (dispatch) => fetch('/login/new', {
   method: 'POST',
   headers: new Headers({
     'Content-Type': 'application/json',
@@ -25,12 +26,14 @@ const saveUser = (newUser) => (dispatch) => fetch('/login', {
 exports.savedUser = saveUser;
 
 
-const reducer = (login = [], action) => {
+const reducer = (users = [], action) => {
   switch (action.type) {
-    case SAVE_FORM:
-      return action.payload.form;
+    case CREATE_USER:
+      return users.concat(action.payload.newUser);
+    // case SAVE_FORM:
+    //   return action.payload.form;
     default:
-      return login;
+      return users;
   }
 };
 

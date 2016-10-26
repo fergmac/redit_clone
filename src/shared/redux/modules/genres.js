@@ -8,7 +8,9 @@ const loadGenres = (genres) => ({
 });
 exports.loadGenres = loadGenres;
 
-const fetchGenres = () => (dispatch) => fetch('/').then((genres) => {
+const fetchGenres = () => (dispatch) => fetch('/api/genres', {
+  credentials: 'same-origin',
+}).then((genres) => {
   genres.json().then(theGenres => dispatch(loadGenres(theGenres)));
 });
 exports.fetchGenres = fetchGenres;

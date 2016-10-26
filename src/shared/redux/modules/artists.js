@@ -7,7 +7,7 @@ const loadArtists = (artists) => ({
 });
 exports.loadArtists = loadArtists;
 
-const fetchArtists = () => (dispatch) => fetch('/').then((artists) => {
+const fetchArtists = (genreId) => (dispatch) => fetch(`/api/artists/${genreId}`).then((artists) => {
   artists.json().then(theArtists => dispatch(loadArtists(theArtists)));
 });
 exports.fetchArtists = fetchArtists;

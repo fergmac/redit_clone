@@ -63,7 +63,7 @@ const sortByNewest = () => ({
 });
 exports.sortByNewest = sortByNewest;
 
-const saveAlbum = (newAlbum) => (dispatch) => fetch('/albums/new', {
+const saveAlbum = (newAlbum) => (dispatch) => fetch('/api/albums/new', {
   method: 'POST',
   headers: new Headers({
     'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const saveAlbum = (newAlbum) => (dispatch) => fetch('/albums/new', {
 });
 exports.saveAlbum = saveAlbum;
 
-const fetchAlbums = () => (dispatch) => fetch('/albums').then((albums) => {
+const fetchAlbums = () => (dispatch) => fetch('/api/albums').then((albums) => {
   albums.json().then(theAlbums => dispatch(loadAlbums(theAlbums)));
 });
 exports.fetchAlbums = fetchAlbums;
