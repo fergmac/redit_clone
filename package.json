@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "MK <mackenzie@redacademy.com> (http://mackenziekieran.com)",
   "contributors": [
-    "Shawn McKay <shawn.j.mckay@gmail.com>"
+    "Fergus MacConnell <f.macconnell@gmail.com>"
   ],
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
     "start": "webpack-validator .webpack/webpack.dev.client.config.js && concurrently 'npm run watch' 'cross-env NODE_ENV=development nodemon --debug --inspect --harmony server' 'npm run browsersync'",
     "browsersync": "browser-sync start --config .webpack/browsersync.js",
     "watch": "webpack --watch --config '.webpack/webpack.dev.client.config.js'",
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+    "test": "jest"
   },
   "babel": {
     "env": {
@@ -109,15 +110,31 @@
     "flow-bin": "^0.33.0",
     "html-loader": "0.4.3",
     "html-webpack-plugin": "2.22.0",
+    "jest": "^17.0.0",
     "json-loader": "^0.5.4",
     "postcss-cssnext": "^2.7.0",
     "postcss-loader": "^0.9.1",
     "postcss-reporter": "^1.4.1",
+    "react-test-renderer": "^15.3.2",
     "run-sequence": "^1.2.2",
     "style-loader": "^0.13.1",
     "webpack": "2.1.0-beta.13",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.1",
     "webpack-validator": "^2.2.4"
+  },
+   "jest": {
+    "testPathDirs": [
+      "test"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!webpack.config.js"
+    ],
+    "coverageDirectory": "__coverage__",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+  ]
   }
 }
