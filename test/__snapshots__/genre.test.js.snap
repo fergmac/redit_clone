@@ -1,0 +1,35 @@
+exports[`Genre renders the genres 1`] = `
+<div>
+  <Subheader
+    inset={false}>
+    Jazz
+  </Subheader>
+  <Divider
+    inset={false} />
+  <List>
+    <Link
+      onlyActiveOnIndex={false}
+      style={Object {}}
+      to="/albums/1">
+      <ListItem
+        autoGenerateNestedIndicator={true}
+        disableKeyboardFocus={false}
+        disabled={false}
+        initiallyOpen={false}
+        insetChildren={false}
+        nestedItems={Array []}
+        nestedLevel={0}
+        onKeyboardFocus={[Function]}
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+        onNestedListToggle={[Function]}
+        onTouchStart={[Function]}
+        open={null}
+        primaryTogglesNestedList={false}
+        secondaryTextLines={1}>
+        Eddie Lang
+      </ListItem>
+    </Link>
+  </List>
+</div>
+`;
