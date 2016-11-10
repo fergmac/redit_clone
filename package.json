@@ -16,7 +16,9 @@
     "browsersync": "browser-sync start --config .webpack/browsersync.js",
     "watch": "webpack --watch --config '.webpack/webpack.dev.client.config.js'",
     "server": "node server/index.js",
-    "test": "jest"
+    "test": "jest",
+    "e2e-setup": "concurrently 'npm start' 'webdriver-manager start'",
+    "e2e": "nightwatch"
   },
   "babel": {
     "env": {
@@ -86,6 +88,7 @@
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-react-constant-elements": "6.9.1",
     "babel-plugin-transform-react-inline-elements": "6.8.0",
     "babel-plugin-transform-react-remove-prop-types": "0.2.7",
