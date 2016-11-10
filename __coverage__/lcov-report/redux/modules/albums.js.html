@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for redux/modules/albums.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">redux/modules</a> albums.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/53</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/42</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// @flow
+// action types
+const VOTE_UP = <span class="cstat-no" title="statement not covered" >'VOTE_UP';</span>
+const SORT_BY_POPULARITY = <span class="cstat-no" title="statement not covered" >'SORT_BY_POPULARITY';</span>
+const SORT_BY_NEWEST = <span class="cstat-no" title="statement not covered" >'SORT_BY_NEWEST';</span>
+const LOAD_ALBUMS = <span class="cstat-no" title="statement not covered" >'LOAD_ALBUMS';</span>
+const STATE_UPDATE = <span class="cstat-no" title="statement not covered" >'STATE_UPDATE';</span>
+const CREATE_ALBUM = <span class="cstat-no" title="statement not covered" >'CREATE_ALBUM';</span>
+// const CREATE_USER = 'CREATE_USER';
+&nbsp;
+// sort votes function
+const sortByKey = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(k</span>ey, order = <span class="branch-0 cbranch-no" title="branch not covered" >1)</span> =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(a</span>, b) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >  switch (true) {</span>
+    case a[key] &lt; b[key]:
+<span class="cstat-no" title="statement not covered" >      return (1 * order);</span>
+    case a[key] &gt; b[key]:
+<span class="cstat-no" title="statement not covered" >      return (-1 * order);</span>
+    default:
+<span class="cstat-no" title="statement not covered" >      return 0;</span>
+  }
+};
+// sort dates function
+// const sortByDate = (a, b) =&gt; {
+//   switch (true) {
+//     case new Date(a) &gt; new Date(b):
+//       return 1;
+//     case new Date(a) &lt; new Date(b):
+//       return -1;
+//     default:
+//       return 0;
+//   }
+// };
+&nbsp;
+&nbsp;
+// action creators
+const createAlbum = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>ewAlbum) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+  type: CREATE_ALBUM,
+  payload: { newAlbum },
+  meta: { remote: true },
+});
+const loadAlbums = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(a</span>lbums) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+  type: LOAD_ALBUMS,
+  payload: { albums },
+  meta: { remote: true },
+});
+<span class="cstat-no" title="statement not covered" >exports.loadAlbums = loadAlbums;</span>
+&nbsp;
+const voteUp = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(i</span>d) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+  type: VOTE_UP,
+  payload: { id },
+  meta: { remote: true },
+});
+<span class="cstat-no" title="statement not covered" >exports.voteUp = voteUp;</span>
+&nbsp;
+const sortByPopularity = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+  type: SORT_BY_POPULARITY,
+  meta: { remote: true },
+});
+<span class="cstat-no" title="statement not covered" >exports.sortByPopularity = sortByPopularity;</span>
+&nbsp;
+const sortByNewest = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+  type: SORT_BY_NEWEST,
+});
+<span class="cstat-no" title="statement not covered" >exports.sortByNewest = sortByNewest;</span>
+&nbsp;
+const saveAlbum = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(n</span>ewAlbum) =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(d</span>ispatch) =&gt; <span class="cstat-no" title="statement not covered" >fetch('/api/albums/new', {</span></span></span>
+  method: 'POST',
+  headers: new Headers({
+    'Content-Type': 'application/json',
+  }),
+  body: JSON.stringify(newAlbum),
+}).then(<span class="fstat-no" title="function not covered" >(s</span>avedAlbum) =&gt; {
+<span class="cstat-no" title="statement not covered" >  dispatch(createAlbum(savedAlbum));</span>
+});
+<span class="cstat-no" title="statement not covered" >exports.saveAlbum = saveAlbum;</span>
+&nbsp;
+const fetchAlbums = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(d</span>ispatch) =&gt; <span class="cstat-no" title="statement not covered" >fetch('/api/albums').then(<span class="fstat-no" title="function not covered" >(a</span>lbums) =&gt; {</span></span></span>
+<span class="cstat-no" title="statement not covered" >  albums.json().then(<span class="fstat-no" title="function not covered" >th</span>eAlbums =&gt; <span class="cstat-no" title="statement not covered" >dispatch(loadAlbums(theAlbums)))</span>;</span>
+});
+<span class="cstat-no" title="statement not covered" >exports.fetchAlbums = fetchAlbums;</span>
+&nbsp;
+// ];
+/* eslint-disable */
+// all changes to Post and Week data here
+const reducer = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(a</span>lbums = <span class="branch-0 cbranch-no" title="branch not covered" >[],</span> action) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >  switch (action.type) {</span>
+    case CREATE_ALBUM:
+<span class="cstat-no" title="statement not covered" >      return albums.concat(action.payload.newAlbum);</span>
+    case LOAD_ALBUMS:
+      const output = <span class="cstat-no" title="statement not covered" >albums.concat(action.payload.albums);</span>
+<span class="cstat-no" title="statement not covered" >      return output;</span>
+      // return action.payload.albums.filter((album) =&gt; parseInt(action.payload.artistId, 10) === album.id);
+    case VOTE_UP:
+<span class="cstat-no" title="statement not covered" >      return albums.map(<span class="fstat-no" title="function not covered" >(a</span>lbum) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (action.payload.id === album.id) {</span>
+          // post.votes += 1;
+<span class="cstat-no" title="statement not covered" >          album.voters.add(payload.clientId); </span>// do in DB
+<span class="cstat-no" title="statement not covered" >          album.votes = album.voters.size;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return album;</span>
+      });
+    case SORT_BY_POPULARITY:
+<span class="cstat-no" title="statement not covered" >      return albums.sort(sortByKey('votes')).slice();</span>
+    case SORT_BY_NEWEST:
+<span class="cstat-no" title="statement not covered" >      return albums.sort(sortByKey('date')).slice();</span>
+      // add date to data array
+    case STATE_UPDATE:
+<span class="cstat-no" title="statement not covered" >      console.log(action.payload);</span>
+<span class="cstat-no" title="statement not covered" >      return action.payload.albums;</span>
+    default:
+<span class="cstat-no" title="statement not covered" >      return albums;</span>
+  }
+};
+&nbsp;
+<span class="cstat-no" title="statement not covered" >exports.default = reducer;</span>
+&nbsp;
+&nbsp;
+// better?
+&nbsp;
+// const changeIfIdMatches = (id, fn, key) =&gt; (item) =&gt; {
+//   if (id === item.id) {
+//     item[key] = fn(item[key]);
+//   }
+//   console.log(item);
+//   return item;
+// };
+&nbsp;
+// const addOne = x =&gt; x + 1;
+// const subtractOne = x =&gt; x - 1;
+// const matchById = id =&gt; id === x.id;
+&nbsp;
+// const reducer = (posts = defaultPosts, action) =&gt; {
+//   console.log(posts);
+//   console.log('VOTE_UP');
+//   switch (action.type) {
+//     case VOTE_UP:
+//       return posts.map(changeIfIdMatches(action.payload.id, addOne, 'votes'));
+//     case VOTE_DOWN:
+//       return posts.map(changeIfIdMatches(action.payload.id, subtractOne, 'votes'));
+//     default:
+//       return posts;
+//   }
+// };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 09 2016 14:56:43 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
