@@ -1,9 +1,16 @@
 import React, { PropTypes } from 'react';
 import Divider from 'material-ui/Divider';
-import styles from './style.css';
+// import styles from './style.css';
 import { List, ListItem } from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import { Link } from 'react-router';
+
+const styles = {
+  links: {
+    textDecoration: 'none',
+    color: 'black',
+  },
+};
 // was weeks
 const Genre = ({ genre }) => (
 
