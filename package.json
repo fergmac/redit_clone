@@ -18,7 +18,9 @@
     "server": "node server/index.js",
     "test": "jest",
     "e2e-setup": "concurrently 'npm start' 'webdriver-manager start'",
-    "e2e": "nightwatch"
+    "wd": "webdriver-manager update && webdriver-manager start",
+    "e2e": "nightwatch",
+    "e2e-all": "nightwatch -e chrome,firefox"
   },
   "babel": {
     "env": {
