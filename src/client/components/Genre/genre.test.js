@@ -2,7 +2,7 @@
 import React, { PropTypes } from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import Genre from '../src/client/components/Genre';
+import Genre from './index';
 
 
 describe('Genre', () => {

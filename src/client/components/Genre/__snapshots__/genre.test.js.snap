@@ -13,6 +13,12 @@ exports[`Genre renders the genres 1`] = `
       to="/albums/1">
       <ListItem
         autoGenerateNestedIndicator={true}
+        className={
+          Object {
+            "color": "black",
+            "textDecoration": "none",
+          }
+        }
         disableKeyboardFocus={false}
         disabled={false}
         initiallyOpen={false}
