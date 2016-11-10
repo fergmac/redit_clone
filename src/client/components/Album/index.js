@@ -18,7 +18,7 @@ const styles = {
 };
 // was post
 const Album = ({ album, voteUp }) => (
-  <Card className={styles.albumContainer}>
+  <Card style={styles.albumContainer}>
     {/* <Link to={album.link}><h3>{album.title}</h3></Link> */}
     <a href="'`${album.link}`'"><h3>{album.title}</h3></a>
     <p>{album.description}</p>
