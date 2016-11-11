@@ -1,14 +1,14 @@
 exports[`Album renders the albums 1`] = `
 <Card
-  className={
+  expandable={false}
+  expanded={null}
+  initiallyExpanded={false}
+  style={
     Object {
       "marginTop": "1rem",
       "padding": "1rem",
     }
-  }
-  expandable={false}
-  expanded={null}
-  initiallyExpanded={false}>
+  }>
   <a
     href="\'\`\${album.link}\`\'">
     <h3>

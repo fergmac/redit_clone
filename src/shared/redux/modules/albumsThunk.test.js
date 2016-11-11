@@ -1,7 +1,9 @@
+/* eslint-disable */
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import * as actions from '../../actions/counter';
-import * as types from '../../constants/ActionTypes';
+import albums from './albums.js';
+// import * as actions from './modules';
+import { fetchAlbums, loadAlbums, LOAD_ALBUMS } from './albums';
 import nock from 'nock';
 import expect from 'expect'; // You can use any testing library
 
@@ -13,18 +15,25 @@ describe('async actions', () => {
     nock.cleanAll();
   });
 
-  it('creates FETCH_TODOS_SUCCESS when fetching todos has been done', () => {
-    nock('http://example.com/')
-      .get('/todos')
-      .reply(200, { body: { todos: ['do something'] } });
+  it('should fetch albums', () => {
+
+    const albums = ['Harlem Street Singer']
+
+    nock('http://localhost:3000/')
+      .get('/albums')
+      .reply(200, { payload: { albums } });
+
+    
 
     const expectedActions = [
-      { type: types.FETCH_TODOS_REQUEST },
-      { type: types.FETCH_TODOS_SUCCESS, body: { todos: ['do something'] } },
+      { type: LOAD_ALBUMS, meta: { remote: true }, payload: { albums } },
     ];
-    const store = mockStore({ todos: [] });
+    const store = mockStore({ albums: [] });
+    fetch = jest.fn(() => Promise.resolve({
+      json: () => Promise.resolve(albums)
+    }))
 
-    return store.dispatch(actions.fetchTodos())
+    return store.dispatch(fetchAlbums())
       .then(() => { // return of async actions
         expect(store.getActions()).toEqual(expectedActions);
       });
