@@ -7,13 +7,21 @@ import Genre from '../Genre';
 import SiteIcon from 'material-ui/svg-icons/av/library-music';
 // import data from '../../data.js';
 import { connect } from 'react-redux';
+
+const styles = {
+  albumCollection: {
+    width: '10px',
+    left: '0',
+    backgroundColor: 'darkturquoise !important',
+  },
+};
 // was lessons
 class Artists extends PureComponent {
   render() {
     return (
       <Drawer>
         <AppBar
-          className={style.albumCollection}
+          style={styles.albumCollection}
           title={<span>HEARDit</span>}
           iconElementLeft={
             <IconButton>

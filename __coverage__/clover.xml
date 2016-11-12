@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1478817503301" clover="3.2.0">
-  <project timestamp="1478817503301" name="All files">
-    <metrics statements="427" coveredstatements="31" conditionals="536" coveredconditionals="0" methods="183" coveredmethods="3" elements="1146" coveredelements="34" complexity="0" loc="427" ncloc="427" packages="24" files="39" classes="39">
+<coverage generated="1478986814799" clover="3.2.0">
+  <project timestamp="1478986814800" name="All files">
+    <metrics statements="428" coveredstatements="49" conditionals="536" coveredconditionals="0" methods="185" coveredmethods="22" elements="1149" coveredelements="71" complexity="0" loc="428" ncloc="428" packages="24" files="41" classes="41">
       <package name="redit_clone">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <file name="nightwatch.conf.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/nightwatch.conf.js">
@@ -384,16 +384,17 @@
         </file>
       </package>
       <package name="redit_clone.src.client.components.Artists">
-        <metrics statements="7" coveredstatements="0" conditionals="29" coveredconditionals="0" methods="11" coveredmethods="0"/>
+        <metrics statements="5" coveredstatements="0" conditionals="27" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <file name="artists.inactivetest.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/src/client/components/Artists/artists.inactivetest.js">
+          <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        </file>
         <file name="index.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/src/client/components/Artists/index.js">
-          <metrics statements="7" coveredstatements="0" conditionals="29" coveredconditionals="0" methods="11" coveredmethods="0"/>
+          <metrics statements="5" coveredstatements="0" conditionals="27" coveredconditionals="0" methods="7" coveredmethods="0"/>
           <line num="1" count="0" type="stmt"/>
           <line num="9" count="0" type="stmt"/>
           <line num="11" count="0" type="stmt"/>
-          <line num="13" count="0" type="stmt"/>
-          <line num="27" count="0" type="stmt"/>
-          <line num="30" count="0" type="stmt"/>
-          <line num="34" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
         </file>
       </package>
       <package name="redit_clone.src.client.components.FilterLink">
@@ -528,9 +529,9 @@
         </file>
       </package>
       <package name="redit_clone.src.shared.redux.modules">
-        <metrics statements="64" coveredstatements="22" conditionals="18" coveredconditionals="0" methods="22" coveredmethods="0"/>
+        <metrics statements="66" coveredstatements="40" conditionals="20" coveredconditionals="0" methods="28" coveredmethods="19"/>
         <file name="albums.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/src/shared/redux/modules/albums.js">
-          <metrics statements="42" coveredstatements="22" conditionals="14" coveredconditionals="0" methods="16" coveredmethods="0"/>
+          <metrics statements="42" coveredstatements="24" conditionals="14" coveredconditionals="0" methods="16" coveredmethods="9"/>
           <line num="3" count="1" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
           <line num="5" count="1" type="stmt"/>
@@ -552,10 +553,10 @@
           <line num="61" count="1" type="stmt"/>
           <line num="64" count="1" type="stmt"/>
           <line num="66" count="1" type="stmt"/>
-          <line num="73" count="0" type="stmt"/>
+          <line num="73" count="1" type="stmt"/>
           <line num="75" count="1" type="stmt"/>
           <line num="77" count="1" type="stmt"/>
-          <line num="78" count="0" type="stmt"/>
+          <line num="78" count="1" type="stmt"/>
           <line num="80" count="1" type="stmt"/>
           <line num="85" count="1" type="stmt"/>
           <line num="86" count="0" type="stmt"/>
@@ -575,39 +576,41 @@
           <line num="115" count="1" type="stmt"/>
         </file>
         <file name="artists.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/src/shared/redux/modules/artists.js">
-          <metrics statements="11" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
-          <line num="1" count="0" type="stmt"/>
-          <line num="3" count="0" type="stmt"/>
-          <line num="8" count="0" type="stmt"/>
-          <line num="10" count="0" type="stmt"/>
-          <line num="13" count="0" type="stmt"/>
-          <line num="15" count="0" type="stmt"/>
+          <metrics statements="12" coveredstatements="8" conditionals="3" coveredconditionals="0" methods="6" coveredmethods="5"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
           <line num="16" count="0" type="stmt"/>
           <line num="18" count="0" type="stmt"/>
           <line num="19" count="0" type="stmt"/>
           <line num="21" count="0" type="stmt"/>
-          <line num="25" count="0" type="stmt"/>
+          <line num="25" count="1" type="stmt"/>
         </file>
         <file name="genres.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/src/shared/redux/modules/genres.js">
-          <metrics statements="11" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
-          <line num="2" count="0" type="stmt"/>
-          <line num="4" count="0" type="stmt"/>
-          <line num="9" count="0" type="stmt"/>
-          <line num="11" count="0" type="stmt"/>
-          <line num="16" count="0" type="stmt"/>
-          <line num="43" count="0" type="stmt"/>
+          <metrics statements="12" coveredstatements="8" conditionals="3" coveredconditionals="0" methods="6" coveredmethods="5"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="16" count="1" type="stmt"/>
+          <line num="43" count="1" type="stmt"/>
           <line num="44" count="0" type="stmt"/>
           <line num="46" count="0" type="stmt"/>
           <line num="47" count="0" type="stmt"/>
           <line num="49" count="0" type="stmt"/>
-          <line num="53" count="0" type="stmt"/>
+          <line num="53" count="1" type="stmt"/>
         </file>
         <file name="users.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/src/shared/redux/modules/users.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="redit_clone.test">
-        <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <file name="babel-jsx-transformer.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/test/babel-jsx-transformer.js">
           <metrics statements="6" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
           <line num="4" count="0" type="stmt"/>
@@ -616,6 +619,10 @@
           <line num="9" count="0" type="stmt"/>
           <line num="10" count="0" type="stmt"/>
           <line num="16" count="0" type="stmt"/>
+        </file>
+        <file name="setupJest.js" path="/Users/fergusmacconnell/Desktop/projects/redit_clone/test/setupJest.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
         </file>
       </package>
     </metrics>
