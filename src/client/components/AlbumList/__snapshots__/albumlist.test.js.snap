@@ -1,0 +1,15 @@
+exports[`AlbumList renders the AlbumList 1`] = `
+<Connect(AlbumList)
+  album={
+    Object {
+      "description": "1920s acoustic guitar jazz",
+      "id": 1,
+      "title": "Jazz Guitar",
+      "votes": Array [
+        Object {
+          "id": 1,
+        },
+      ],
+    }
+  } />
+`;
