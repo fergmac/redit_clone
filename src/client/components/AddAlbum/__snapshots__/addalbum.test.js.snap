@@ -1,0 +1,15 @@
+exports[`AddAlbum creates a new Album 1`] = `
+<Connect(ReduxForm)
+  album={
+    Object {
+      "description": "1920s acoustic guitar jazz",
+      "id": 1,
+      "title": "Jazz Guitar",
+      "votes": Array [
+        Object {
+          "id": 1,
+        },
+      ],
+    }
+  } />
+`;

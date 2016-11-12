@@ -1,9 +1,31 @@
 import React, { PureComponent } from 'react';
-import styles from './style.css';
+// import styles from './style.css';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { saveAlbum } from '../../../shared/redux/modules/albums';
 import Card from 'material-ui/Card';
+
+
+const styles = {
+  addAlbum: {
+    display: 'flex',
+    width: '100%',
+    height: '100%',
+    flexFlow: 'column nowrap',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  addAlbumCard: {
+    marginTop: '50px',
+    padding: '10px',
+  },
+  addAlbumForm: {
+    display: 'flex',
+    flexFlow: 'column nowrap',
+    justifyContent: 'center',
+    width: '200px',
+  },
+};
 // was create post
 
 class AddAlbum extends PureComponent {
