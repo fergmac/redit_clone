@@ -1,11 +1,11 @@
 // @flow
 // action types
-const VOTE_UP = 'VOTE_UP';
-const SORT_BY_POPULARITY = 'SORT_BY_POPULARITY';
+export const VOTE_UP = 'VOTE_UP';
+export const SORT_BY_POPULARITY = 'SORT_BY_POPULARITY';
 const SORT_BY_NEWEST = 'SORT_BY_NEWEST';
-const LOAD_ALBUMS = 'LOAD_ALBUMS';
+export const LOAD_ALBUMS = 'LOAD_ALBUMS';
 const STATE_UPDATE = 'STATE_UPDATE';
-const CREATE_ALBUM = 'CREATE_ALBUM';
+export const CREATE_ALBUM = 'CREATE_ALBUM';
 // const CREATE_USER = 'CREATE_USER';
 
 // sort votes function

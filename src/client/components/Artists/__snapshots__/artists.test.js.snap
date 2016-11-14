@@ -1,0 +1,9 @@
+exports[`Artists renders the artists 1`] = `
+<Connect(Artists)
+  artists={
+    Object {
+      "id": 1,
+      "name": "Eddie Lang",
+    }
+  } />
+`;

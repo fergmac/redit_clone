@@ -16,7 +16,11 @@
     "browsersync": "browser-sync start --config .webpack/browsersync.js",
     "watch": "webpack --watch --config '.webpack/webpack.dev.client.config.js'",
     "server": "node server/index.js",
-    "test": "jest"
+    "test": "jest",
+    "e2e-setup": "concurrently 'npm start' 'webdriver-manager start'",
+    "wd": "webdriver-manager update && webdriver-manager start",
+    "e2e": "nightwatch",
+    "e2e-all": "nightwatch -e chrome,firefox"
   },
   "babel": {
     "env": {
@@ -46,7 +50,7 @@
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "jsonwebtoken": "^7.1.9",
-    "material-ui": "^16.0.0",
+    "material-ui": "^0.16.0",
     "moment": "^2.15.1",
     "nconf": "^0.8.4",
     "passport": "^0.3.2",
@@ -61,6 +65,7 @@
     "redux": "^3.6.0",
     "redux-form-material-ui": "^4.1.0",
     "redux-logger": "^2.7.0",
+    "redux-mock-store": "^1.2.1",
     "redux-thunk": "^2.1.0",
     "sequelize": "^3.24.5",
     "socket.io": "^1.5.0"
@@ -86,6 +91,7 @@
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.2",
     "babel-loader": "6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-react-constant-elements": "6.9.1",
     "babel-plugin-transform-react-inline-elements": "6.8.0",
     "babel-plugin-transform-react-remove-prop-types": "0.2.7",
@@ -109,18 +115,22 @@
     "eslint-plugin-jsx-a11y": "^2.0.0",
     "eslint-plugin-react": "5.2.2",
     "eventsource-polyfill": "0.9.6",
+    "expect": "^1.20.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "flow-bin": "^0.33.0",
     "html-loader": "0.4.3",
     "html-webpack-plugin": "2.22.0",
     "jest": "^17.0.0",
     "jest-css-modules": "^1.1.0",
+    "jest-fetch-mock": "^1.0.6",
     "json-loader": "^0.5.4",
+    "nock": "^9.0.2",
     "postcss-cssnext": "^2.7.0",
     "postcss-loader": "^0.9.1",
     "postcss-reporter": "^1.4.1",
     "react-addons-test-utils": "^15.3.2",
     "react-test-renderer": "^15.3.2",
+    "redux-mock-store": "^1.2.1",
     "run-sequence": "^1.2.2",
     "style-loader": "^0.13.1",
     "webpack": "2.1.0-beta.13",
@@ -129,7 +139,7 @@
     "webpack-validator": "^2.2.4"
   },
   "jest": {
-    "collectCoverage": true,
+    "collectCoverage": false,
     "collectCoverageFrom": [
       "**/*.js",
       "!webpack.config.js"
@@ -137,6 +147,10 @@
     "coverageDirectory": "__coverage__",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
+    ],
+    "automock": false,
+    "setupFiles": [
+      "./test/setupJest.js"
     ]
   }
 }

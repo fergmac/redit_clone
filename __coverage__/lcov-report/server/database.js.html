@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for server/database.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">server</a> database.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Sequelize = require('sequelize');<span class="cstat-no" title="statement not covered" ></span>
+const bcrypt <span class="cstat-no" title="statement not covered" >= require('bcrypt'</span>);
+const config <span class="cstat-no" title="statement not covered" >= require('./configs'</span>);
+&nbsp;
+const db <span class="cstat-no" title="statement not covered" >= new Sequelize(</span>
+    config.get('POSTGRES_DB'),
+    config.get('POSTGRES_USER'),
+    config.get('POSTGRES_PASSWORD'),
+  {
+    dialect: 'postgres',
+    host: 'localhost',
+    pool: {
+      max: 5,
+      min: 1,
+      idle: 10000,
+    },
+  });
+const Genre <span class="cstat-no" title="statement not covered" >= db.define('genres', {</span>
+  title: { type: Sequelize.STRING },
+});
+const Artist <span class="cstat-no" title="statement not covered" >= db.define('artists', {</span>
+  name: { type: Sequelize.STRING },
+});
+const Album <span class="cstat-no" title="statement not covered" >= db.define('albums', {</span>
+  title: { type: Sequelize.STRING },
+  artist: { type: Sequelize.STRING },
+  genre: { type: Sequelize.STRING },
+  description: { type: Sequelize.STRING },
+  link: { type: Sequelize.TEXT },
+});
+const Tag <span class="cstat-no" title="statement not covered" >= db.define('tag', {</span>
+  title: { type: Sequelize.STRING },
+});
+&nbsp;
+const User <span class="cstat-no" title="statement not covered" >= db.define('user', {</span>
+  email: {
+    type: Sequelize.STRING,
+    unique: true,
+    validate: { isEmail: true } },
+  password: {
+    type: Sequelize.TEXT,
+    set(password) <span class="fstat-no" title="function not covered" >{</span>
+      const salt <span class="cstat-no" title="statement not covered" >= bcrypt.genSaltSync(8</span>);
+      const hash <span class="cstat-no" title="statement not covered" >= bcrypt.hashSync(password, salt</span>);
+<span class="cstat-no" title="statement not covered" >      this.setDataValue('password', hash);</span>
+    },
+  },
+},
+  {
+    instanceMethods: {
+      verifyPassword(password<span class="fstat-no" title="function not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >        return bcrypt.compareSync(password, this.password)</span>;
+      },
+    },
+  });
+&nbsp;
+// const ArtistGenre = db.define('artistgenre', {});
+&nbsp;
+const Votes <span class="cstat-no" title="statement not covered" >= db.define('votes', {}</span>);
+// one to many relationships
+<span class="cstat-no" title="statement not covered" >Genre.hasMany(Album);</span>
+<span class="cstat-no" title="statement not covered" >User.hasMany(Album);</span>
+// Genre.hasMany(Artist);
+&nbsp;
+// many to many relationships
+<span class="cstat-no" title="statement not covered" >Album.belongsToMany(Tag, { through: 'albumtags' });</span>
+<span class="cstat-no" title="statement not covered" >Tag.belongsToMany(Album, { through: 'albumtags' });</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >Artist.belongsToMany(Genre, { through: 'artistgenre' });</span>
+<span class="cstat-no" title="statement not covered" >Genre.belongsToMany(Artist, { through: 'artistgenre' });</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >User.belongsToMany(Album, { through: 'votes' });</span>
+<span class="cstat-no" title="statement not covered" >Album.belongsToMany(User, { through: 'votes' });</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >db.sync({</span>
+  force: true,
+}).th<span class="fstat-no" title="function not covered" >en</span>(() =&gt; {
+<span class="cstat-no" title="statement not covered" >  Genre.create({</span>
+    title: 'Jazz',
+  });
+<span class="cstat-no" title="statement not covered" >  Genre.create({</span>
+    title: 'R&amp;B',
+  });
+<span class="cstat-no" title="statement not covered" >  Genre.create({</span>
+    title: 'Blues',
+  });
+<span class="cstat-no" title="statement not covered" >  Artist.create({</span>
+    name: 'Eddie Lang',
+  }).th<span class="fstat-no" title="function not covered" >en</span>((artist) =&gt; {
+<span class="cstat-no" title="statement not covered" >    artist.setGenres([1]);</span>
+  });
+<span class="cstat-no" title="statement not covered" >  Artist.create({</span>
+    name: 'Ernest Ranglin',
+  }).th<span class="fstat-no" title="function not covered" >en</span>((artist) =&gt; {
+<span class="cstat-no" title="statement not covered" >    artist.setGenres([1]);</span>
+  });
+<span class="cstat-no" title="statement not covered" >  Artist.create({</span>
+    name: 'Sam &amp; Dave',
+  }).th<span class="fstat-no" title="function not covered" >en</span>((artist) =&gt; {
+<span class="cstat-no" title="statement not covered" >    artist.setGenres([2, 3]);</span>
+  });
+<span class="cstat-no" title="statement not covered" >  Artist.create({</span>
+    name: 'Solange',
+  }).th<span class="fstat-no" title="function not covered" >en</span>((artist) =&gt; {
+<span class="cstat-no" title="statement not covered" >    artist.setGenres([2]);</span>
+  });
+<span class="cstat-no" title="statement not covered" >  Artist.create({</span>
+    name: 'Rev. Gary Davis',
+  }).th<span class="fstat-no" title="function not covered" >en</span>((artist) =&gt; {
+<span class="cstat-no" title="statement not covered" >    artist.setGenres([3]);</span>
+  });
+<span class="cstat-no" title="statement not covered" >  Artist.create({</span>
+    name: 'Henry Thomas',
+  }).th<span class="fstat-no" title="function not covered" >en</span>((artist) =&gt; {
+<span class="cstat-no" title="statement not covered" >    artist.setGenres([3]);</span>
+  });
+<span class="cstat-no" title="statement not covered" >  Artist.create({</span>
+    name: 'Elizabeth Cotten',
+  }).th<span class="fstat-no" title="function not covered" >en</span>((artist) =&gt; {
+<span class="cstat-no" title="statement not covered" >    artist.setGenres([3]);</span>
+  });
+<span class="cstat-no" title="statement not covered" >  User.create({</span>
+    email: 'f.macconnell@gmail.com',
+    password: 'password',
+  });
+<span class="cstat-no" title="statement not covered" >  Album.create({</span>
+    title: 'Pioneer of Jazz Guitar',
+    description: '1927-1939 acoustic jazz guitar',
+    link: 'https://www.youtube.com/watch?v=K1Kw8L6rYt0',
+  });
+<span class="cstat-no" title="statement not covered" >  Album.create({</span>
+    title: 'Jazz Jamaica',
+    description: 'Jamaican Jazz Guitar',
+    link: 'https://www.youtube.com/watch?v=KFwQithLUok&amp;list=PLDnvLPkzDsWxCV2SpzEiloi7Fprj_a_0u',
+  });
+<span class="cstat-no" title="statement not covered" >  Album.create({</span>
+    title: 'Soul Men',
+    description: '1967 R&amp;B soul duo',
+    link: 'https://www.youtube.com/watch?v=ZVx2i6jGzf8',
+  });
+<span class="cstat-no" title="statement not covered" >  Album.create({</span>
+    title: 'A Seat At The Table',
+    description: 'American Singer Songwriter',
+    link: 'https://www.youtube.com/watch?v=ZltxY1iIyPs',
+  });
+<span class="cstat-no" title="statement not covered" >  Album.create({</span>
+    title: 'Harlem Street Singer',
+    description: '1960\'s fingerstyle guitar',
+    link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
+  });
+<span class="cstat-no" title="statement not covered" >  Album.create({</span>
+    title: 'Texas Worried Blues',
+    description: 'Pre War Country Blues',
+    link: 'https://www.youtube.com/watch?v=aSBkcBpLnzY',
+  });
+<span class="cstat-no" title="statement not covered" >  Album.create({</span>
+    title: 'Shake Sugaree',
+    description: '1960\'s fingerstyle guitar',
+    link: 'https://www.youtube.com/watch?v=MjCmp1gt5o8',
+  });
+});
+<span class="cstat-no" title="statement not covered" >Votes.bulkCreate([</span>
+  {
+    albumId: 1,
+    userId: 1,
+  },
+  {
+    albumId: 1,
+    userId: 3,
+  },
+  {
+    albumId: 2,
+    userId: 1,
+  },
+  {
+    albumId: 2,
+    userId: 3,
+  },
+  {
+    albumId: 2,
+    userId: 4,
+  },
+  {
+    albumId: 2,
+    userId: 2,
+  },
+  {
+    albumId: 3,
+    userId: 1,
+  },
+  {
+    albumId: 3,
+    userId: 2,
+  },
+  {
+    albumId: 3,
+    userId: 3,
+  },
+  {
+    albumId: 3,
+    userId: 4,
+  },
+  {
+    albumId: 3,
+    userId: 5,
+  },
+  {
+    albumId: 3,
+    userId: 6,
+  },
+  {
+    albumId: 3,
+    userId: 7,
+  },
+]);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >module.exports = {</span>
+  Genre,
+  Artist,
+  Album,
+  User,
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 09 2016 16:25:23 GMT-0800 (PST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

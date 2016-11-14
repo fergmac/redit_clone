@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/client/components/AlbumList/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">All files</a> / <a href="index.html">src/client/components/AlbumList</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/6</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { PureComponent } from 'r<span class="cstat-no" title="statement not covered" >eact';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+import styles from './style.css';
+import Album from '../Album';
+import { connect } from 'react-redux';
+import { voteUp, sortByPopularity, sortByNewest, fetchAlbums } from '../../../shared/redux/modules/albums';
+import FlatButton from 'material-ui/FlatButton';
+import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
+import { Link } from 'react-router';<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span>
+&nbsp;
+// was postList
+const newest <span class="cstat-no" title="statement not covered" >= 'newest</span>';
+const popular <span class="cstat-no" title="statement not covered" >= 'popular</span>';
+&nbsp;
+class AlbumList extends PureComponent {
+  // constructor(sortType = null) {
+  //   super();
+  //   this.sortType = sortType;
+  // }
+&nbsp;
+  // componentWillMount() {
+  //   // dispatch sort by newest/popular
+  //   switch (this.sortType) {
+  //     case 'popular':
+  //       this.props.loadPosts('popular');
+  //       break;
+  //     case 'newest':
+  //       this.props.loadPosts('newest');
+  //       break;
+  //     default:
+  //       this.props.loadPosts();
+  //   }
+  // }
+&nbsp;
+  renderSortedAlbums(sortOrder) {
+    switch (sortOrder) {
+      case newest:
+        return this.props.albums.sort((album, nextAlbum) =&gt; album.date &lt; nextAlbum.date);
+      case popular:
+        return this.props.albums.sort((album, nextAlbum) =&gt; album.votes &lt; nextAlbum.votes);
+      default:
+        return this.props.albums.sort((album, nextAlbum) =&gt; album.date &lt; nextAlbum.date);
+    }
+  }
+  // renderAlbum(album, index) {
+  //   return (
+  //     &lt;div key={index}&gt;
+  //       &lt;h2&gt;Title: {album.title}&lt;/h2&gt;
+  //       &lt;p&gt;{album.date.toString()}&lt;/p&gt;
+  //       &lt;p&gt;Votes: {album.votes}&lt;/p&gt;
+  //     &lt;/div&gt;
+  //   );
+  // }
+&nbsp;
+  componentDidMount() {
+    // this.props.sortByPopularity();
+    // this.props.sortByNewest();
+    // this.props.loadAlbums();
+    this.props.fetchAlbums();
+  }
+  render() {
+    // const sortOrder = this.props.location.query.sort;
+    // variable so i don't have to write this.props in front
+    const { albums, params, voteUps, sortByNew, sortByPop } = this.props;
+    // parseInt turns the params from a string into a number
+    if (params.albumId) {
+      const correctAlbum = this.props.albums.filter((album) =&gt; parseInt(params.albumId, 10) === album.id);
+      // console.log(this.props);
+      return (
+        &lt;div&gt;
+          &lt;Toolbar className={styles.albumToolbar}&gt;
+            &lt;ToolbarGroup&gt;
+              &lt;ToolbarTitle text="Albums" /&gt;
+            &lt;/ToolbarGroup&gt;
+            &lt;ToolbarGroup&gt;
+              &lt;ToolbarTitle text="Sort:" /&gt;
+              &lt;Link to={{ pathname: '/AlbumList', query: { sort: newest } }}&gt;
+                &lt;FlatButton label="Newest" primary onClick={sortByNew.bind(this)} /&gt;
+              &lt;/Link&gt;
+              {/* &lt;Link to={`/posts/${popular}`} key={popular}&gt; */}
+              &lt;Link to={{ pathname: '/AlbumList', query: { sort: popular } }}&gt;
+                &lt;FlatButton label="Popular" primary onClick={sortByPop.bind(this)} /&gt;
+              &lt;/Link&gt;
+            &lt;/ToolbarGroup&gt;
+          &lt;/Toolbar&gt;
+          &lt;div className={styles.albumListContainer}&gt;
+            {correctAlbum.map((album) =&gt; (&lt;Album album={album} voteUp={voteUps} key={album.id} /&gt;))}
+          &lt;/div&gt;
+        &lt;/div&gt;
+      );
+    }
+    return (
+      &lt;div&gt;
+        &lt;Toolbar className={styles.albumToolbar}&gt;
+          &lt;ToolbarGroup&gt;
+            &lt;ToolbarTitle text="Albums" /&gt;
+          &lt;/ToolbarGroup&gt;
+          &lt;ToolbarGroup&gt;
+            &lt;ToolbarTitle text="Sort:" /&gt;
+            &lt;Link to={{ pathname: '/AlbumList', query: { sort: newest } }}&gt;
+              &lt;FlatButton label="Newest" onClick={sortByNew.bind(this)} /&gt;
+            &lt;/Link&gt;
+            {/* &lt;Link to={`/posts/${popular}`} key={popular}&gt; */}
+            &lt;Link to={{ pathname: '/AlbumList', query: { sort: popular } }}&gt;
+              &lt;FlatButton label="Popular" onClick={sortByPop.bind(this)} /&gt;
+            &lt;/Link&gt;
+          &lt;/ToolbarGroup&gt;
+        &lt;/Toolbar&gt;
+        &lt;div className={styles.albumListContainer}&gt;
+          {albums.map((album) =&gt; (&lt;Album album={album} voteUp={voteUps} key={album.id} /&gt;))}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+// function that gets the newest/popular PostList
+// export function getPostList(sortType) {
+//   switch (sortType) {
+//     case 'newest':
+//       return new PostList('newest');
+//     case 'popular':
+//       return new PostList('popular');
+//     default:
+//       return PostList;
+//   }
+// }
+&nbsp;
+const mapStateToProps <span class="cstat-no" title="statement not covered" >= state =<span class="fstat-no" title="function not covered" >&gt; ({</span></span>
+  albums: state.albums,
+});
+&nbsp;
+const mapDispatchToProps <span class="cstat-no" title="statement not covered" >= (dispat<span class="fstat-no" title="function not covered" >ch) =&gt; ({</span></span>
+  fetchAlbums: () =&gt; {
+    dispatch(fetchAlbums());
+  },
+  voteUps: (id) =&gt; {
+    dispatch(voteUp(id));
+  },
+  sortByPop: () =&gt; {
+    dispatch(sortByPopularity());
+  },
+  sortByNew: () =&gt; {
+    dispatch(sortByNewest());
+  },
+});
+&nbsp;
+export default connect(mapStateToProps, mapDispatchToProps)(AlbumList);
+&nbsp;
+//       return (
+//         &lt;div&gt;
+//           &lt;Toolbar className={styles.albumToolbar}&gt;
+//             &lt;ToolbarGroup&gt;
+//               &lt;ToolbarTitle text="Albums" /&gt;
+//             &lt;/ToolbarGroup&gt;
+//             &lt;ToolbarGroup&gt;
+//               &lt;ToolbarTitle text="Sort:" /&gt;
+//               &lt;Link&gt;
+//                 &lt;FlatButton label="Newest" primary onClick={sortByNew.bind(this)} /&gt;
+//               &lt;/Link&gt;
+//               {/* &lt;Link to={`/posts/${popular}`} key={popular}&gt; */}
+//               &lt;Link&gt;
+//                 &lt;FlatButton label="Popular" primary onClick={sortByPop.bind(this)} /&gt;
+//               &lt;/Link&gt;
+//             &lt;/ToolbarGroup&gt;
+//           &lt;/Toolbar&gt;
+//           &lt;div className={styles.albumListContainer}&gt;
+//               {correctAlbum.map((album) =&gt; (&lt;Album album={album} voteUp={voteUps} key={album.id} /&gt;))}
+//           &lt;/div&gt;
+//         &lt;/div&gt;
+//       );
+//     }
+//     return (
+//       &lt;div&gt;
+//         &lt;Toolbar className={styles.albumToolbar}&gt;
+//           &lt;ToolbarGroup&gt;
+//             &lt;ToolbarTitle text="Albums" /&gt;
+//           &lt;/ToolbarGroup&gt;
+//           &lt;ToolbarGroup&gt;
+//             &lt;ToolbarTitle text="Sort:" /&gt;
+//             &lt;Link&gt;
+//               &lt;FlatButton label="Newest" onClick={sortByNew.bind(this)} /&gt;
+//             &lt;/Link&gt;
+//             {/* &lt;Link to={`/posts/${popular}`} key={popular}&gt; */}
+//             &lt;Link&gt;
+//               &lt;FlatButton label="Popular" onClick={sortByPop.bind(this)} /&gt;
+//             &lt;/Link&gt;
+//           &lt;/ToolbarGroup&gt;
+//         &lt;/Toolbar&gt;
+//         &lt;div className={styles.albumListContainer}&gt;
+//             {albums.map((album) =&gt; (&lt;Album album={album} voteUp={voteUps} key={album.id} /&gt;))}
+//         &lt;/div&gt;
+//       &lt;/div&gt;
+//     );
+//   }
+// }
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Nov 09 2016 16:25:23 GMT-0800 (PST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

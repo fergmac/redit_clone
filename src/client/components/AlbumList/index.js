@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import styles from './style.css';
+// import styles from './style.css';
 import Album from '../Album';
 import { connect } from 'react-redux';
 import { voteUp, sortByPopularity, sortByNewest, fetchAlbums } from '../../../shared/redux/modules/albums';
@@ -7,6 +7,19 @@ import FlatButton from 'material-ui/FlatButton';
 import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
 import { Link } from 'react-router';
 
+
+const styles = {
+  albumListContainer: {
+    paddingLeft: '255px',
+    marginLeft: '1rem',
+    marginRight: '1rem',
+    marginTop: '5rem',
+  },
+  albumToolbar: {
+    marginTop: '4rem',
+    marginLeft: '255px',
+  },
+};
 // was postList
 const newest = 'newest';
 const popular = 'popular';
@@ -67,7 +80,7 @@ class AlbumList extends PureComponent {
       // console.log(this.props);
       return (
         <div>
-          <Toolbar className={styles.albumToolbar}>
+          <Toolbar style={styles.albumToolbar}>
             <ToolbarGroup>
               <ToolbarTitle text="Albums" />
             </ToolbarGroup>
@@ -82,7 +95,7 @@ class AlbumList extends PureComponent {
               </Link>
             </ToolbarGroup>
           </Toolbar>
-          <div className={styles.albumListContainer}>
+          <div style={styles.albumListContainer}>
             {correctAlbum.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
           </div>
         </div>
@@ -90,7 +103,7 @@ class AlbumList extends PureComponent {
     }
     return (
       <div>
-        <Toolbar className={styles.albumToolbar}>
+        <Toolbar style={styles.albumToolbar}>
           <ToolbarGroup>
             <ToolbarTitle text="Albums" />
           </ToolbarGroup>
@@ -105,7 +118,7 @@ class AlbumList extends PureComponent {
             </Link>
           </ToolbarGroup>
         </Toolbar>
-        <div className={styles.albumListContainer}>
+        <div style={styles.albumListContainer}>
           {albums.map((album) => (<Album album={album} voteUp={voteUps} key={album.id} />))}
         </div>
       </div>

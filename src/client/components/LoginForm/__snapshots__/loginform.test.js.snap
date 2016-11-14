@@ -1,0 +1,1 @@
+exports[`LoginForm creates a new user 1`] = `<Connect(ReduxForm) />`;

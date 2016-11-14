@@ -1,4 +1,4 @@
-const LOAD_ARTISTS = 'LOAD_ARTISTS';
+export const LOAD_ARTISTS = 'LOAD_ARTISTS';
 
 const loadArtists = (artists) => ({
   type: LOAD_ARTISTS,

@@ -30,7 +30,6 @@ store.dispatch(voteUp(1));
 store.dispatch(sortByPopularity());
 
 ReactDOM.render(
-  // store={store} gives us access to the store everywhere
   <Provider store={store}>
     <MuiThemeProvider muiTheme={muiTheme}>
       <Router history={browserHistory}>
