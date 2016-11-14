@@ -2,16 +2,16 @@
 // module.exports = {
 //   'Demo test': (browser) => {
 //     browser
-//       .url('http://www.google.com');
+//       .url('http://localhost:3000');
 //   },
 // };
 
 // module.exports = {
 //   'Demo test': function (browser) {
 //     browser
-//       .url('http://www.google.com')
+//       .url('http://localhost:3000')
 //       .waitForElementVisible('body', 1000)
-//       .setValue('input[type=text]', 'king tubby')
+//       .setValue('input[type=text]', 'Eddie Lang')
 //       .waitForElementVisible('button[name=btnG]', 1000)
 //       .click('button[name=btnG]');
 //   },

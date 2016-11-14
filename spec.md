@@ -150,15 +150,56 @@ Your project must:
 - [X] Contain an organized file tree separating client and server code
 - [ ] Be free of lint errors from ESLint
 
-### Streth Goals
+
+
+
+### Common
+
+Your project must:
+
+- [X] Be pushed to Github 
+- [X] Use [descriptive Git commits](http://chris.beams.io/posts/git-commit/)
+- [X] Use small, single purpose Git commits
+- [X] Contain `README.md` with project summary and setup
+- [X] Contain a valid [`package.json`](http://browsenpm.org/package.json) file with all appropriate fields completed
+- [X] Contain `.gitignore` file (ignoring `node_modules` and system files)
+- [X] Contain this self-evaluated spec checklist renamed `specs.md`
+- [X] Use ESLint with the [AirBnB style-guide](https://github.com/airbnb/javascript)
+
+### Development
+
+Your project must:
+
+- [X] Include a shortcut for test watcher and code coverage as an NPM script
+- [X] Include a shortcut to run E2E tests as an NPM script
+
+### Quality
+
+Your project must:
+
+- [X] Contain unit tests:
+   - For Redux reducers
+   - That include a spy
+   - That include a mock
+- [ ] Have over 35% unit test coverage
+- [X] Snapshot-test six components (Jest)
+- [X] Test prop rendering of components (Enzyme)
+- [X] Test three or more DOM interactions (Enzyme)
+- [X] Implement E2E tests that:
+   - Test a simple page load scenario
+   - Test page routing
+   - Test form fill in and submit
+   - Take screenshots when tests fail
+- [X] Document code comments for easy readability
+
+### Stretch Goals
 
 Want to challenge yourself? Your project could also:
 
-- [ ] Display user Gravatar when logged in
-- [ ] Allow users to create new categories
-- [ ] Reload page state from save state to localStorage
-- [ ] Setup OAuth2 login for GitHub, Twitter and/or Facebook
-
-## Submission
-
-When you’re ready to submit your project, please email a link to your GitHub repository containing your project to mackenzie
+- [ ] Generate zero TSLint warnings
+- [ ] Generate zero TypeScript compiler warnings
+- [ ] Have over 75% unit test coverage
+- [ ] E2E test six or more user scenarios
+- [ ] Use E2E testing to take photos of homepage at five or more different sizes
+- [ ] Use E2E testing to run tests on multiple browsers
+- [ ] Implement [React Cards](https://github.com/steos/reactcards) for three or more components

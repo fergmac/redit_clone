@@ -3,7 +3,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import albums from './albums.js';
 // import * as actions from './modules';
-import { fetchAlbums, loadAlbums, LOAD_ALBUMS } from './albums';
+import { fetchAlbums, loadAlbums, LOAD_ALBUMS, saveAlbum, CREATE_ALBUM } from './albums';
 import nock from 'nock';
 import expect from 'expect'; // You can use any testing library
 
@@ -38,4 +38,28 @@ describe('async actions', () => {
         expect(store.getActions()).toEqual(expectedActions);
       });
   });
+  //   it('should save albums', () => {
+
+  //   const newAlbum = ['Harlem Street Singer']
+
+  //   nock('http://localhost:3000/')
+  //     .get('/albums/new')
+  //     .reply(200, { payload: { newAlbum } });
+
+    
+
+  //   const expectedActions = [
+  //     { type: CREATE_ALBUM, meta: { remote: true }, payload: { newAlbum } },
+  //   ];
+  //   const store = mockStore({ albums: [] });
+  //   // fetch = jest.fn(() => Promise.resolve({
+  //   //   json: () => Promise.resolve(newAlbum)
+  //   // }))
+
+  //   return store.dispatch(saveAlbum())
+  //     .then(() => { // return of async actions
+  //       expect(store.getActions()).toEqual(expectedActions);
+  //     });
+  // });
+
 });

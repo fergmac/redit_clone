@@ -4,7 +4,7 @@ const imageDir = name => __dirname + '/screenshots/sizes/' + name + '.png';
 // const browserName = browser.options.desiredCapabilities.browserName;  
 
 // tests that your page works
-// const url = 'http://localhost:3000';
+const url = 'http://localhost:3000';
 
 module.exports = {
   'Loads page with title': (browser) => {
@@ -12,18 +12,18 @@ module.exports = {
     main
         .navigate()
         .waitForElementVisible('body', 1000)
-        .assert.containsText('@title', 'HEARDit');
+        .assert.containsText('span', 'HEARDit');
     browser.end();
   },
-//   'Loads list of albums': (browser) => {
-//     browser
-//       .url(url)
-//       .waitForElementVisible('div', 1000)
-//       .elements('class name', 'albumContainer', (result) => {
-//         browser.assert.equal(result.value.length > 0, true);
-//       })
-//       .end();
-//   },
+  'Loads list of albums': (browser) => {
+    browser
+      .url(url)
+      .waitForElementVisible('div', 1000)
+      .elements('class name', 'albumContainer', (result) => {
+        browser.assert.equal(result.value.length > 0, true);
+      })
+      .end();
+  },
 //   'Votes item up once on click': (browser) => {
 //     browser
 //       .url(url)
@@ -36,18 +36,18 @@ module.exports = {
 //       .end();
 //   },
 // test for different screen sizes
-// 'Take photos': (browser) => {
-//     browser
-//       .url(url)
-//       .waitForElementVisible('body', 1000);
-//     viewport_widths.forEach(width => {
-//     browser
-//     .resizeWindow(width, 300)
-//     // saves with browser name
-//     .saveScreenshot(imageDir(`page-${browserName}-${width}`));
-//     });
-//     browser.end();
-//   }  
+'Take photos': (browser) => {
+    browser
+      .url(url)
+      .waitForElementVisible('body', 1000);
+    viewport_widths.forEach(width => {
+    browser
+    .resizeWindow(width, 300)
+    // saves with browser name
+    .saveScreenshot(imageDir(`page-${browserName}-${width}`));
+    });
+    browser.end();
+  }  
 
 };
 

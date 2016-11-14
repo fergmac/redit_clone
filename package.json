@@ -139,7 +139,7 @@
     "webpack-validator": "^2.2.4"
   },
   "jest": {
-    "collectCoverage": true,
+    "collectCoverage": false,
     "collectCoverageFrom": [
       "**/*.js",
       "!webpack.config.js"

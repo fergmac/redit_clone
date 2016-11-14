@@ -1,5 +1,5 @@
 import React, { PureComponent, PropTypes } from 'react';
-import style from './style.css';
+// import style from './style.css';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
 import Drawer from 'material-ui/Drawer';

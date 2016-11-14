@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import styles from './style.css';
+// import styles from './style.css';
 import { connect } from 'react-redux';
 import { saveUser } from '../../../shared/redux/modules/users';
 import { TextField } from 'redux-form-material-ui';
