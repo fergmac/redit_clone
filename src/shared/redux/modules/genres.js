@@ -1,5 +1,5 @@
 // action types
-export const LOAD_GENRES = 'LOAD_GENRES';
+const LOAD_GENRES = 'LOAD_GENRES';
 // action creators
 const loadGenres = (genres) => ({
   type: LOAD_GENRES,

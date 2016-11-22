@@ -31,11 +31,11 @@ const styles = {
 class AddAlbum extends PureComponent {
 
   componentDidMount() {
-    this.props.saveAlbum({
-      title: 'ferg',
-      description: 'fingerstyle guitar',
-      link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
-    });
+    // this.props.saveAlbum({
+    //   title: 'ferg',
+    //   description: 'fingerstyle guitar',
+    //   link: 'https://www.youtube.com/watch?v=ygDs_pkEHDs',
+    // });
   }
   render() {
     const { handleSubmit } = this.props;
